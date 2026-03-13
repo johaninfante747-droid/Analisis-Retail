@@ -65,7 +65,7 @@ Hoy en día, el éxito de una tienda depende de algo más que simplemente vender
 
 A pesar de tener acceso a información detallada, muchas veces los negocios operan a ciegas, sin saber con certeza quiénes son sus compradores frecuentes o qué factores hacen que decidan gastar más. Con este conjunto de datos de 2023, tenemos la oportunidad de ir más allá de las etiquetas de 'edad' o 'género' para descubrir patrones reales de consumo. Sin un análisis estadístico que respalde las decisiones, cualquier estrategia de inventario o mejora en el servicio terminaría basándose en simples corazonadas, en lugar de apoyarse en la realidad que los datos nos están mostrando.\
 
-  El problema central de esta investigación radica en determinar: ¿De qué manera influyen las características demográficas de los clientes (edad y género) en sus preferencias de categorías de productos y en el volumen de gasto total durante el periodo 2023?\
+El problema central de esta investigación radica en determinar: ¿De qué manera influyen las características demográficas de los clientes (edad y género) en sus preferencias de categorías de productos y en el volumen de gasto total durante el periodo 2023?\
 
 Argumento final. Debido a esto, se plantea las siguientes preguntas de investigación:\
 
@@ -77,7 +77,7 @@ Argumento final. Debido a esto, se plantea las siguientes preguntas de investiga
 
 \section{Justificación}
 
-Justificación del trabajo de investigación\
+La relevancia de esta investigación reside en la necesidad de transformar los registros transaccionales en conocimiento estratégico, ya que "lo que no se puede medir, no se puede mejorar"; para una tienda minorista, entender la relación entre quién compra (demografía) y cuánto gasta (volumen de ventas) permite optimizar la asignación de recursos y el manejo de inventarios, entre otros. Desde una perspectiva académica, este trabajo justifica el uso de herramientas de computación avanzada (Python y R) para resolver problemas reales de análisis de mercado, demostrando cómo la estadística puede reducir la incertidumbre en la toma de decisiones acertadas.
 
 \section{Objetivos}
 
@@ -99,7 +99,7 @@ Justificación del trabajo de investigación\
 
 \subsection{Horizontal}
 
-Describir la cobertura Horizontal del trabajo de investigación\
+1.3.1. Horizontal: Se limita al análisis de las variables demográficas (edad, género) y transaccionales (categoría, cantidad, precio, total) contenidas en el dataset de retail suministrado.
 
 \begin{table}[ht]
 \centering
@@ -119,11 +119,11 @@ VARIABLE n\\
 
 \subsection{Vertical}
 
-Describir la cobertura Vertical del trabajo de investigación
+1.3.2. Vertical: El estudio abarca desde el Análisis Exploratorio de Datos (EDA) y estadística descriptiva, hasta la validación de hipótesis mediante pruebas de independencia y la creación de un modelo de regresión lineal simple.
 
 \section{Periodo de Referencia}
 
-Describir la fuente y el Periodo de Referencia utilizado en el trabajo de investigación
+Periodo de Referencia "El análisis se basa en datos históricos recolectados durante el año fiscal 2023, permitiendo observar el comportamiento del consumidor a lo largo de los doce meses de dicho periodo."
 
 \section{Variables}
 
