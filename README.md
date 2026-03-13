@@ -20,7 +20,7 @@ A pesar de tener acceso a información detallada, muchas veces los negocios oper
 
 1- Describir el perfil demográfico y transaccional de la base de clientes mediante estadística descriptiva (medias, varianzas, distribución de edades y gastos) utilizando librerías de análisis de datos.
 
-2- Determinar la relación estadística entre el género del consumidor y la preferencia por categorías específicas de productos (Electrónica, Ropa, Belleza) mediante pruebas de independencia (como Chi-cuadrado).
+2- Determinar la relación estadística entre el género del consumidor y la preferencia por categorías específicas de productos (Electrónica, Ropa, Belleza) mediante pruebas de independencia.
 
 3- Evaluar la estacionalidad y el comportamiento temporal de las ventas a lo largo de los meses analizados, identificando picos de demanda según la categoría del producto.
 
