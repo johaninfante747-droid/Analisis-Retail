@@ -1,6 +1,6 @@
 ---
 # --- Metadatos Básicos ---
-title: "Análisis de factores demográficos y su impacto en los patrones de consumo en el sector retail durante el año 2023."
+title: "Análisis de factores demográficos y su impacto en los patrones de consumo en una tienda minorista durante el año 2023."
 author:
    - Johan Infante
    - Eddie Palomino
