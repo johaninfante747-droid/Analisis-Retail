@@ -41,9 +41,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                         DATOS (Conectados a RMarkdown)                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Título del Trabajo Final}
-\author{Primer participante \\ Segundo participante \\ Tercer
-participante}
+\title{Análisis de factores demográficos y su impacto en los patrones de
+consumo en una tienda minorista durante el año 2023.}
+\author{Johan Infante \\ Eddie Palomino \\ Juan Covarrubia}
 
 % Lógica para Facultad: Si la defines en el YAML la usa, si no, usa la default
 
@@ -110,46 +110,85 @@ investigación\ldots{}             % Aquí se pega el texto que escribiste en el
 \def\baselinestretch{1.5}
 
 % --- CAMBIO CRÍTICO 2: Aquí RMarkdown inyecta todo tu texto ---
-\chapter*{Introducción}
+\textbackslash chapter*\{Introducción\}
 
 Introducción del trabajo de investigación
 
 \chapter{Planteamiento del Problema}
 
-Describir planteamiento del problema\\
+Hoy en día, el éxito de una tienda depende de algo más que simplemente
+vender productos; depende de qué tan bien conoce a las personas que
+entran por su puerta. Ya no es suficiente con acumular miles de
+registros de ventas en una base de datos; el verdadero reto está en
+entender qué nos dicen esos números sobre los hábitos de los clientes.\\
+
+A pesar de tener acceso a información detallada, muchas veces los
+negocios operan a ciegas, sin saber con certeza quiénes son sus
+compradores frecuentes o qué factores hacen que decidan gastar más. Con
+este conjunto de datos de 2023, tenemos la oportunidad de ir más allá de
+las etiquetas de `edad' o `género' para descubrir patrones reales de
+consumo. Sin un análisis estadístico que respalde las decisiones,
+cualquier estrategia de inventario o mejora en el servicio terminaría
+basándose en simples corazonadas, en lugar de apoyarse en la realidad
+que los datos nos están mostrando.\\
+
+El problema central de esta investigación radica en determinar: ¿De qué
+manera influyen las características demográficas de los clientes (edad y
+género) en sus preferencias de categorías de productos y en el volumen
+de gasto total durante el periodo 2023?\\
 
 Argumento final. Debido a esto, se plantea las siguientes preguntas de
 investigación:\\
 
-\textbf{1.} Pregunta1\\
+\textbf{1.} ¿Existe una asociación estadísticamente significativa entre
+el género del consumidor y la preferencia por categorías específicas de
+productos (Electrónica, Ropa, Belleza)?\\
 
-\textbf{2.} Pregunta2\\
+\textbf{2.} ¿Cómo fluctúa el comportamiento de las ventas y el gasto
+promedio mensual a lo largo del año, y existen picos de demanda
+identificables por temporada?\\
 
-\textbf{3.} Pregunta3\\
+\textbf{3.} ¿En qué medida la edad del cliente y la cantidad de
+artículos adquiridos actúan como predictores del gasto total, y cómo
+puede esto ayudar a definir un perfil de cliente de alto valor para la
+tienda?\\
 
 \section{Justificación}
 
-Justificación del trabajo de investigación\\
+La relevancia de esta investigación reside en la necesidad de
+transformar los registros transaccionales en conocimiento estratégico,
+ya que ``lo que no se puede medir, no se puede mejorar''; para una
+tienda minorista, entender la relación entre quién compra (demografía) y
+cuánto gasta (volumen de ventas) permite optimizar la asignación de
+recursos y el manejo de inventarios, entre otros. Desde una perspectiva
+académica, este trabajo justifica el uso de herramientas de computación
+avanzada (Python y R) para resolver problemas reales de análisis de
+mercado, demostrando cómo la estadística puede reducir la incertidumbre
+en la toma de decisiones acertadas.
 
 \section{Objetivos}
 
+--\textgreater{}
+
 \subsection{Objetivo General}
 \begin{itemize}
-  \item{Describir objetivo general del trabajo de investigación}
+  \item{Analizar el impacto de los factores demográficos en los patrones de consumo y el volumen de ventas de una tienda minorista utilizando técnicas de programación y análisis estadístico.}
 \end{itemize}
-
 \subsection{Objetivos Específicos}
 \begin{itemize}
-  \item{Describir objetivo 1 del trabajo de investigación}
-  \item{Describir objetivo 2 del trabajo de investigación}
-  \item{Describir objetivo 3 del trabajo de investigación}
+  \item{Describir el perfil demográfico y transaccional de la base de clientes mediante estadística descriptiva (medias, varianzas, distribución de edades y gastos) utilizando librerías de análisis de datos.}
+  \item{Determinar la relación estadística entre el género del consumidor y la preferencia por categorías específicas de productos (Electrónica, Ropa, Belleza) mediante pruebas de independencia.}
+  \item{Evaluar la estacionalidad y el comportamiento temporal de las ventas a lo largo de los meses analizados, identificando picos de demanda según la categoría del producto.}
+  \item{Identificar los determinantes del gasto total (Monto Total) evaluando cómo: la edad, la cantidad de artículos y la categoría del producto explican las variaciones en los ingresos,  realizando un modelo de regresión simple con el propósito de generar perfiles de consumo precisos que faciliten a la gerencia la personalización de servicios y la optimización de su estrategia comercial basada en estos datos.}
 \end{itemize}
 
 \section{Cobertura}
 
 \subsection{Horizontal}
 
-Describir la cobertura Horizontal del trabajo de investigación\\
+1.3.1. Horizontal: Se limita al análisis de las variables demográficas
+(edad, género) y transaccionales (categoría, cantidad, precio, total)
+contenidas en el dataset de retail suministrado.
 
 \begin{table}[ht]
 \centering
@@ -169,12 +208,17 @@ VARIABLE n\\
 
 \subsection{Vertical}
 
-Describir la cobertura Vertical del trabajo de investigación
+1.3.2. Vertical: El estudio abarca desde el Análisis Exploratorio de
+Datos (EDA) y estadística descriptiva, hasta la validación de hipótesis
+mediante pruebas de independencia y la creación de un modelo de
+regresión lineal simple.
 
 \section{Periodo de Referencia}
 
-Describir la fuente y el Periodo de Referencia utilizado en el trabajo
-de investigación
+Periodo de Referencia ``El análisis se basa en datos históricos
+recolectados durante el año fiscal 2023, permitiendo observar el
+comportamiento del consumidor a lo largo de los doce meses de dicho
+periodo.''
 
 \section{Variables}
 
@@ -266,6 +310,8 @@ Descripción\\
 \chapter{Anexo B}
 
 \chapter{Anexo C}
+
+video-games \textless- read\_csv (``video\_games\_sales.csv'')
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                   REFERENCIAS                     %
