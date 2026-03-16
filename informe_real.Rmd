@@ -81,8 +81,6 @@ La relevancia de esta investigación reside en la necesidad de transformar los r
 
 \section{Objetivos}
 
---\>
-
 \subsection{Objetivo General}
 \begin{itemize}
   \item{Analizar el impacto de los factores demográficos en los patrones de consumo y el volumen de ventas de una tienda minorista utilizando técnicas de programación y análisis estadístico.}
@@ -99,7 +97,7 @@ La relevancia de esta investigación reside en la necesidad de transformar los r
 
 \subsection{Horizontal}
 
-1.3.1. Horizontal: Se limita al análisis de las variables demográficas (edad, género) y transaccionales (categoría, cantidad, precio, total) contenidas en el dataset de retail suministrado.
+Se limita al análisis de las variables demográficas (edad, género) y transaccionales (categoría, cantidad, precio, total) contenidas en el dataset de retail suministrado.
 
 \begin{table}[ht]
 \centering
