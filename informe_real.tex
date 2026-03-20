@@ -116,79 +116,87 @@ Introducción del trabajo de investigación
 
 \chapter{Planteamiento del Problema}
 
-Hoy en día, el éxito de una tienda depende de algo más que simplemente
-vender productos; depende de qué tan bien conoce a las personas que
-entran por su puerta. Ya no es suficiente con acumular miles de
-registros de ventas en una base de datos; el verdadero reto está en
-entender qué nos dicen esos números sobre los hábitos de los clientes.\\
+En la actualidad, el sector minorista (retail) se enfrenta a un entorno
+altamente competitivo donde la comprensión del cliente es vital. Tal
+como lo demuestra el Estudio Retail 2024-2025 de la firma de análisis
+GfK, las dinámicas de consumo y la frecuencia de compra están
+directamente vinculadas a la segmentación generacional y el perfil del
+comprador, obligando a las marcas a estudiar sus datos demográficos para
+anticipar el comportamiento del mercado. Las empresas ya no solo venden
+productos sino que gestionan información estratégica para optimizar su
+inventario y fidelizar a sus consumidores.
 
-A pesar de tener acceso a información detallada, muchas veces los
-negocios operan a ciegas, sin saber con certeza quiénes son sus
-compradores frecuentes o qué factores hacen que decidan gastar más. Con
-este conjunto de datos de 2023, tenemos la oportunidad de ir más allá de
-las etiquetas de `edad' o `género' para descubrir patrones reales de
-consumo. Sin un análisis estadístico que respalde las decisiones,
-cualquier estrategia de inventario o mejora en el servicio terminaría
-basándose en simples corazonadas, en lugar de apoyarse en la realidad
-que los datos nos están mostrando.\\
+A partir de esta realidad, surge la necesidad de aplicar este mismo
+enfoque analítico a nivel micro. Al disponer de un conjunto de datos
+transaccionales del año 2023 de una tienda \emph{retail}, existe la
+oportunidad de extraer información valiosa que describa quiénes son los
+clientes y cómo interactúan con los productos ofrecidos. El problema
+central radica en transformar estos datos crudos en información
+estructurada que permita comprender las dinámicas básicas de consumo sin
+recurrir a modelos predictivos complejos, basándose estrictamente en el
+comportamiento histórico registrado.
 
-El problema central de esta investigación radica en determinar: ¿De qué
-manera influyen las características demográficas de los clientes (edad y
-género) en sus preferencias de categorías de productos y en el volumen
-de gasto total durante el periodo 2023?\\
+El problema central de esta investigación radica en determinar: ¿Existe
+una asociación observable entre el perfil demográfico del consumidor y
+sus hábitos de gasto y elección de productos en el conjunto de datos de
+2023?
 
 Argumento final. Debido a esto, se plantea las siguientes preguntas de
 investigación:\\
 
-\textbf{1.} ¿Existe una asociación estadísticamente significativa entre
-el género del consumidor y la preferencia por categorías específicas de
-productos (Electrónica, Ropa, Belleza)?\\
+\textbf{1.} ¿Cuál es el perfil demográfico de los clientes que conforman
+el conjunto de datos de 2023 y cómo se distribuyen gráficamente según su
+edad y género?
 
 \textbf{2.} ¿Cómo fluctúa el comportamiento de las ventas y el gasto
-promedio mensual a lo largo del año, y existen picos de demanda
-identificables por temporada?\\
+promedio mensual a lo largo del año?
 
-\textbf{3.} ¿En qué medida la edad del cliente y la cantidad de
-artículos adquiridos actúan como predictores del gasto total, y cómo
-puede esto ayudar a definir un perfil de cliente de alto valor para la
-tienda?\\
+\textbf{3.} ¿Cuáles son las preferencias de compra en las distintas
+categorías de productos según los diferentes grupos etarios de los
+consumidores?\\
 
 \section{Justificación}
 
-La relevancia de esta investigación reside en la necesidad de
-transformar los registros transaccionales en conocimiento estratégico,
-ya que ``lo que no se puede medir, no se puede mejorar''; para una
-tienda minorista, entender la relación entre quién compra (demografía) y
-cuánto gasta (volumen de ventas) permite optimizar la asignación de
-recursos y el manejo de inventarios, entre otros. Desde una perspectiva
-académica, este trabajo justifica el uso de herramientas de computación
-avanzada (Python y R) para resolver problemas reales de análisis de
-mercado, demostrando cómo la estadística puede reducir la incertidumbre
-en la toma de decisiones acertadas.
+La presente investigación se justifica desde un punto de vista práctico
+y académico. En el ámbito práctico, el análisis descriptivo de bases de
+datos de clientes permite a cualquier negocio identificar a su público
+objetivo real y observar hechos concretos, como qué productos tienen
+mayor salida en ciertos meses o qué rango de edad consume más tecnología
+frente a artículos de hogar. Esta información es la piedra angular para
+cualquier toma de decisiones comerciales, diseño de campañas o gestión
+de inventario.
+
+Desde el punto de vista académico, este trabajo representa una
+aplicación directa y rigurosa de los fundamentos de estadística
+descriptiva y computación del primer semestre. Permite demostrar el
+dominio en la limpieza de datos, el uso de tablas de frecuencia, la
+visualización de datos (como la construcción de pirámides poblacionales)
+y el análisis de correlación simple. Al limitar el estudio a
+herramientas descriptivas, se garantiza un manejo profundo y preciso de
+los resultados obtenidos, sentando las bases analíticas necesarias para
+futuras investigaciones más complejas.
 
 \section{Objetivos}
 
---\textgreater{}
-
 \subsection{Objetivo General}
 \begin{itemize}
-  \item{Analizar el impacto de los factores demográficos en los patrones de consumo y el volumen de ventas de una tienda minorista utilizando técnicas de programación y análisis estadístico.}
+  \item{nalizar el perfil demográfico y el comportamiento de compra de los clientes registrados en el conjunto de datos de retail durante el año 2023, utilizando técnicas de estadística descriptiva para la identificación de patrones de consumo.}
 \end{itemize}
 \subsection{Objetivos Específicos}
 \begin{itemize}
-  \item{Describir el perfil demográfico y transaccional de la base de clientes mediante estadística descriptiva (medias, varianzas, distribución de edades y gastos) utilizando librerías de análisis de datos.}
-  \item{Determinar la relación estadística entre el género del consumidor y la preferencia por categorías específicas de productos (Electrónica, Ropa, Belleza) mediante pruebas de independencia.}
-  \item{Evaluar la estacionalidad y el comportamiento temporal de las ventas a lo largo de los meses analizados, identificando picos de demanda según la categoría del producto.}
-  \item{Identificar los determinantes del gasto total (Monto Total) evaluando cómo: la edad, la cantidad de artículos y la categoría del producto explican las variaciones en los ingresos,  realizando un modelo de regresión simple con el propósito de generar perfiles de consumo precisos que faciliten a la gerencia la personalización de servicios y la optimización de su estrategia comercial basada en estos datos.}
+  \item{}
+  \item{}
+  \item{}
+  \item{}
 \end{itemize}
 
 \section{Cobertura}
 
 \subsection{Horizontal}
 
-1.3.1. Horizontal: Se limita al análisis de las variables demográficas
-(edad, género) y transaccionales (categoría, cantidad, precio, total)
-contenidas en el dataset de retail suministrado.
+Se limita al análisis de las variables demográficas (edad, género) y
+transaccionales (categoría, cantidad, precio, total) contenidas en el
+dataset de retail suministrado.
 
 \begin{table}[ht]
 \centering
