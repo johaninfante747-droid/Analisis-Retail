@@ -85,7 +85,7 @@ Desde el punto de vista académico, este trabajo representa una aplicación dire
 
 \subsection{Objetivo General}
 \begin{itemize}
-  \item{nalizar el perfil demográfico y el comportamiento de compra de los clientes registrados en el conjunto de datos de retail durante el año 2023, utilizando técnicas de estadística descriptiva para la identificación de patrones de consumo.}
+  \item{Analizar el perfil demográfico y el comportamiento de compra de los clientes registrados en el conjunto de datos de retail durante el año 2023, utilizando técnicas de estadística descriptiva para la identificación de patrones de consumo.}
 \end{itemize}
 \subsection{Objetivos Específicos}
 \begin{itemize}
