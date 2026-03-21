@@ -89,17 +89,17 @@ Desde el punto de vista académico, este trabajo representa una aplicación dire
 \end{itemize}
 \subsection{Objetivos Específicos}
 \begin{itemize}
-  \item{}
-  \item{}
-  \item{}
-  \item{}
+  \item{Describir la estructura demográfica de los consumidores mediante la elaboración de una pirámide poblacional que clasifique a los clientes por edad y género.}
+  \item{Identificar el grado de asociación lineal entre las variables cuantitativas del estudio (como edad, ingresos y monto de gasto) a través del cálculo de una matriz de correlación.}
+  \item{Describir la fluctuación de las ventas a lo largo del año 2023 para identificar los picos de demanda y el comportamiento regular en periodos particulares.}
+  \item{Determinar las preferencias de compra por categoría de producto según distintos rangos de edad, utilizando tablas de frecuencia cruzada (tablas de contingencia).}
 \end{itemize}
 
 \section{Cobertura}
 
 \subsection{Horizontal}
 
-Se limita al análisis de las variables demográficas (edad, género) y transaccionales (categoría, cantidad, precio, total) contenidas en el dataset de retail suministrado.
+La investigación abarca exclusivamente a la población de clientes registrados y las transacciones contenidas dentro del dataset proporcionado por la cátedra de Computación I. Los resultados reflejarán el comportamiento de esta muestra específica de consumidores del sector retail y no pretenden ser extrapolados a la población general de un país o región que no esté representada en el documento .csv.
 
 \begin{table}[ht]
 \centering
@@ -119,7 +119,9 @@ VARIABLE n\\
 
 \subsection{Vertical}
 
-1.3.2. Vertical: El estudio abarca desde el Análisis Exploratorio de Datos (EDA) y estadística descriptiva, hasta la validación de hipótesis mediante pruebas de independencia y la creación de un modelo de regresión lineal simple.
+Temporal: El análisis se circunscribe a los datos históricos generados y registrados durante el año 2023.
+
+Temático: El estudio se limita a la estadística descriptiva bidimensional y unidimensional. Las variables a considerar incluyen la edad, el género, las categorías de productos, la fecha de compra y el monto gastado. Quedan expresamente excluidos los análisis de estadística inferencial (como pruebas de hipótesis o tests de independencia de Chi-cuadrado), los modelos de regresión lineal para proyecciones y los modelos avanzados de series de tiempo para evaluar la estacionalidad formal.
 
 \section{Periodo de Referencia}
 
