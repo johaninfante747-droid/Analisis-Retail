@@ -180,23 +180,34 @@ futuras investigaciones más complejas.
 
 \subsection{Objetivo General}
 \begin{itemize}
-  \item{nalizar el perfil demográfico y el comportamiento de compra de los clientes registrados en el conjunto de datos de retail durante el año 2023, utilizando técnicas de estadística descriptiva para la identificación de patrones de consumo.}
+  \item{Analizar el perfil demográfico y el comportamiento de compra de los clientes registrados en el conjunto de datos de retail durante el año 2023, utilizando técnicas de estadística descriptiva para la identificación de patrones de consumo.}
 \end{itemize}
 \subsection{Objetivos Específicos}
 \begin{itemize}
-  \item{}
-  \item{}
-  \item{}
-  \item{}
+  \item{Describir la estructura demográfica de los consumidores mediante la elaboración de una pirámide poblacional que clasifique a los clientes por edad y género.}
+  \item{Identificar el grado de asociación lineal entre las variables cuantitativas del estudio (como edad, ingresos y monto de gasto) a través del cálculo de una matriz de correlación.}
+  \item{Describir la fluctuación de las ventas a lo largo del año 2023 para identificar los picos de demanda y el comportamiento regular en periodos particulares.}
+  \item{Determinar las preferencias de compra por categoría de producto según distintos rangos de edad, utilizando tablas de frecuencia cruzada (tablas de contingencia).}
 \end{itemize}
 
 \section{Cobertura}
 
 \subsection{Horizontal}
 
-Se limita al análisis de las variables demográficas (edad, género) y
-transaccionales (categoría, cantidad, precio, total) contenidas en el
-dataset de retail suministrado.
+La cobertura horizontal abarca las características intrínsecas de cada
+cliente y transacción registrada en la base de datos de \emph{retail}.
+Se consideran las dimensiones demográficas de los consumidores (como
+edad y género) y las métricas descriptivas de su comportamiento de
+consumo (categorías de productos y monto de gasto) dentro del mercado
+estudiado.
+
+\subsection{Vertical}
+
+La cobertura vertical del trabajo de investigación comprende un total de
+\textbf{1,000 observaciones} (registros). Cada fila representa una
+transacción única realizada por un cliente. El alcance temporal de los
+datos se circunscribe al año 2023, lo que permite un análisis
+transversal y descriptivo del comportamiento de ventas en dicho periodo.
 
 \begin{table}[ht]
 \centering
@@ -204,22 +215,17 @@ dataset de retail suministrado.
 \resizebox{10cm}{!} {
 \begin{tabular}{ccc}
   \hline
-\ \ \ \ \ NOMBRE DE LA VARIABLE \\ 
+\ \ \ \ \ TIPO \ \ \ \ \ VARIABLE \ \ \ \ \ DESCRIPCIÓN \\  
   \hline
-   VARIABLE 1 \\ 
-VARIABLE 2\\ 
-VARIABLE n\\ 
+   \ \ \ \ \ Categórica \ \ \ \ Género \ \ \ \ Identidad de género del cliente registrado. \\
+   \ \ \ \ \ Numérica \ \ \ \ Edad \ \ \ \ Edad del consumidor expresada en años.\\
+   \ \ \ \ \ Categórica  \ \ \ \ Categoría_Producto  \ \ \ \ Clasificación del artículo adquirido (ej. Tecnología, Hogar, Vestimenta). \\
+   \ \ \ \ \ Numérica \ \ \ \ Gasto_Total \ \ \ \ Monto monetario total gastado en la transacción. \\
+   \ \ \ \ \ Fecha/Numérica \ \ \ \ Fecha_Compra \ \ \ \ Día, mes y año exacto de la transacción durante el periodo 2023. \\
    \hline
 \end{tabular}
 }
 \end{table}
-
-\subsection{Vertical}
-
-1.3.2. Vertical: El estudio abarca desde el Análisis Exploratorio de
-Datos (EDA) y estadística descriptiva, hasta la validación de hipótesis
-mediante pruebas de independencia y la creación de un modelo de
-regresión lineal simple.
 
 \section{Periodo de Referencia}
 
@@ -230,7 +236,20 @@ periodo.''
 
 \section{Variables}
 
-Describir la variable en estudio en el trabajo de investigación
+La variable principal de interés económico en este estudio es el
+\textbf{Gasto\_Total} (o \emph{Total\_Sales}), que representa el volumen
+monetario de las transacciones realizadas por los clientes. Como
+variables descriptivas y de segmentación se analizan:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Variables Demográficas: \textbf{Edad y Género.}
+\item
+  Variables Comerciales: \textbf{Categoría\_Producto.}
+\item
+  Variables Temporales: \textbf{Fecha\_Compra.}
+\end{enumerate}
 
 \chapter{Marco Teórico}
 

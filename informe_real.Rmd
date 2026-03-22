@@ -1,39 +1,32 @@
 ---
-# --- Metadatos Básicos ---
-title: "Análisis de factores demográficos y su impacto en los patrones de consumo en una tienda minorista durante el año 2023."
+title: Análisis de factores demográficos y su impacto en los patrones de consumo en
+  una tienda minorista durante el año 2023.
 author:
-   - Johan Infante
-   - Eddie Palomino
-   - Juan Covarrubia
+- Johan Infante
+- Eddie Palomino
+- Juan Covarrubia
 date: "Febrero 2026"
-
-# --- Metadatos Específicos de Plantilla ---
-degree: "Computación I"
-director: 
-  - Jesus Ochoa 
-  - Oliver Triveño
-lugar: "Caracas"
-facultad: 
-  - Facultad de Ciencias Económicas y Sociales
-  - Escuela de Estadistica y Ciencias Actuariales
-# Ruta al escudo (relativa al archivo .Rmd)
-escudo: "Latex/Classes/Escudos/faces"
-
-# --- Bibliografía ---
-bibliography: bibliografia.bib
-
-# --- Configuración de Salida ---
-output: 
+output:
   pdf_document:
-    template: template.tex  # Llamamos al archivo de plantilla
-    keep_tex: true                 # Útil para ver errores si ocurren
-    toc: true                      # Generar índice
+    template: template.tex
+    keep_tex: true
+    toc: true
     number_sections: true
-    citation_package: natbib       # Importante: forzar natbib porque tu plantilla lo usa
-
-# --- Resumen (Abstract) ---
-abstract: |
-  Resumen del trabajo de investigación...
+    citation_package: natbib
+  html_document:
+    toc: true
+    df_print: paged
+director:
+- Jesus Ochoa
+- Oliver Triveño
+lugar: Caracas
+facultad:
+- Facultad de Ciencias Económicas y Sociales
+- Escuela de Estadistica y Ciencias Actuariales
+escudo: Latex/Classes/Escudos/faces
+bibliography: bibliografia.bib
+degree: Computación I
+abstract: Resumen del trabajo de investigación...
 ---
 
 ```{r setup, include=FALSE}
@@ -98,8 +91,10 @@ Desde el punto de vista académico, este trabajo representa una aplicación dire
 \section{Cobertura}
 
 \subsection{Horizontal}
+La cobertura horizontal abarca las características intrínsecas de cada cliente y transacción registrada en la base de datos de *retail*. Se consideran las dimensiones demográficas de los consumidores (como edad y género) y las métricas descriptivas de su comportamiento de consumo (categorías de productos y monto de gasto) dentro del mercado estudiado.
 
-La investigación abarca exclusivamente a la población de clientes registrados y las transacciones contenidas dentro del dataset proporcionado por la cátedra de Computación I. Los resultados reflejarán el comportamiento de esta muestra específica de consumidores del sector retail y no pretenden ser extrapolados a la población general de un país o región que no esté representada en el documento .csv.
+\subsection{Vertical}
+La cobertura vertical del trabajo de investigación comprende un total de **1,000 observaciones** (registros). Cada fila representa una transacción única realizada por un cliente. El alcance temporal de los datos se circunscribe al año 2023, lo que permite un análisis transversal y descriptivo del comportamiento de ventas en dicho periodo.
 
 \begin{table}[ht]
 \centering
@@ -107,21 +102,17 @@ La investigación abarca exclusivamente a la población de clientes registrados 
 \resizebox{10cm}{!} {
 \begin{tabular}{ccc}
   \hline
-\ \ \ \ \ NOMBRE DE LA VARIABLE \\ 
+\ \ \ \ \ TIPO \ \ \ \ \ VARIABLE \ \ \ \ \ DESCRIPCIÓN \\  
   \hline
-   VARIABLE 1 \\ 
-VARIABLE 2\\ 
-VARIABLE n\\ 
+   \ \ \ \ \ Categórica \ \ \ \ Género \ \ \ \ Identidad de género del cliente registrado. \\
+   \ \ \ \ \ Numérica \ \ \ \ Edad \ \ \ \ Edad del consumidor expresada en años.\\
+   \ \ \ \ \ Categórica  \ \ \ \ Categoría_Producto  \ \ \ \ Clasificación del artículo adquirido (ej. Tecnología, Hogar, Vestimenta). \\
+   \ \ \ \ \ Numérica \ \ \ \ Gasto_Total \ \ \ \ Monto monetario total gastado en la transacción. \\
+   \ \ \ \ \ Fecha/Numérica \ \ \ \ Fecha_Compra \ \ \ \ Día, mes y año exacto de la transacción durante el periodo 2023. \\
    \hline
 \end{tabular}
 }
 \end{table}
-
-\subsection{Vertical}
-
-Temporal: El análisis se circunscribe a los datos históricos generados y registrados durante el año 2023.
-
-Temático: El estudio se limita a la estadística descriptiva bidimensional y unidimensional. Las variables a considerar incluyen la edad, el género, las categorías de productos, la fecha de compra y el monto gastado. Quedan expresamente excluidos los análisis de estadística inferencial (como pruebas de hipótesis o tests de independencia de Chi-cuadrado), los modelos de regresión lineal para proyecciones y los modelos avanzados de series de tiempo para evaluar la estacionalidad formal.
 
 \section{Periodo de Referencia}
 
@@ -129,7 +120,13 @@ Periodo de Referencia "El análisis se basa en datos históricos recolectados du
 
 \section{Variables}
 
-Describir la variable en estudio en el trabajo de investigación
+La variable principal de interés económico en este estudio es el **Gasto_Total** (o *Total_Sales*), que representa el volumen monetario de las transacciones realizadas por los clientes. Como variables descriptivas y de segmentación se analizan:
+
+1.  Variables Demográficas: **Edad y Género.**
+
+2.  Variables Comerciales: **Categoría_Producto.**
+
+3.  Variables Temporales: **Fecha_Compra.**
 
 \chapter{Marco Teórico}
 
