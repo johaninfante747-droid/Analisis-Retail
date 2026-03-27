@@ -91,9 +91,11 @@ Desde el punto de vista académico, este trabajo representa una aplicación dire
 \section{Cobertura}
 
 \subsection{Horizontal}
+
 La cobertura horizontal abarca las características intrínsecas de cada cliente y transacción registrada en la base de datos de *retail*. Se consideran las dimensiones demográficas de los consumidores (como edad y género) y las métricas descriptivas de su comportamiento de consumo (categorías de productos y monto de gasto) dentro del mercado estudiado.
 
 \subsection{Vertical}
+
 La cobertura vertical del trabajo de investigación comprende un total de **1,000 observaciones** (registros). Cada fila representa una transacción única realizada por un cliente. El alcance temporal de los datos se circunscribe al año 2023, lo que permite un análisis transversal y descriptivo del comportamiento de ventas en dicho periodo.
 
 \begin{table}[ht]
@@ -104,11 +106,8 @@ La cobertura vertical del trabajo de investigación comprende un total de **1,00
   \hline
 \ \ \ \ \ TIPO \ \ \ \ \ VARIABLE \ \ \ \ \ DESCRIPCIÓN \\  
   \hline
-   \ \ \ \ \ Categórica \ \ \ \ Género \ \ \ \ Identidad de género del cliente registrado. \\
-   \ \ \ \ \ Numérica \ \ \ \ Edad \ \ \ \ Edad del consumidor expresada en años.\\
-   \ \ \ \ \ Categórica  \ \ \ \ Categoría_Producto  \ \ \ \ Clasificación del artículo adquirido (ej. Tecnología, Hogar, Vestimenta). \\
-   \ \ \ \ \ Numérica \ \ \ \ Gasto_Total \ \ \ \ Monto monetario total gastado en la transacción. \\
-   \ \ \ \ \ Fecha/Numérica \ \ \ \ Fecha_Compra \ \ \ \ Día, mes y año exacto de la transacción durante el periodo 2023. \\
+   \ \ \ \ \ Categórica \ \ \ \ Género \ \ \ \ Identidad de género del cliente registrado
+   \ \ \ \ \ Numérica \ \ \ \ Edad \ \ \ \ Edad del consumidor expresada en años\\
    \hline
 \end{tabular}
 }
@@ -208,5 +207,3 @@ Descripción\
 \chapter{Anexo B}
 
 \chapter{Anexo C}
-
-video-games \<- read_csv ("video_games_sales.csv")
