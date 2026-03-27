@@ -1,0 +1,32 @@
+---
+title: "Limpieza R"
+output: html_document
+date: "2026-03-27"
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(scales)
+```
+
+```{r}
+file_path <-"X16_Retail_Dataset_real"
+
+X16_Retail_Dataset_real <- read.csv(file_path)
+
+head(X16_Retail_Dataset_real)
+```
+
+
+```{r}
+X16_Retail_Dataset_real <- read.csv("X16_Retail_Dataset_real")
+df_limpio <- X16_Retail_Dataset_real %>%
+  drop_na() %>%
+  distinct() %>%
+  mutate(Date = ymd(Date))
+
+print(paste("Total de filas limpias:", nrow(df_limpio)))
+```
+
