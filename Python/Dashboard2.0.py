@@ -36,3 +36,29 @@ with st.container():
     with col3:
         st.metric(label="Total de Transacciones", value=f"{len(df)}")
     st.write("---")
+
+tab1, tab2 = st.tabs(["👥 Obj 1 y 2: Perfil Demográfico", "📈 Obj 3 y 4: Patrones de Compra"])
+
+with tab1:
+    col_izq, col_der = st.columns(2)
+
+    with col_izq:
+        st.subheader("1. Estructura Demográfica")
+        piramide_data = df.groupby(["Rango Edad", "Gender"]).size().reset_index(name="Cantidad")
+        piramide_data.loc[piramide_data["Gender"] == "Male", "Cantidad"] *= -1
+        fig_piramide = px.bar(
+            piramide_data, y="Rango Edad", x="Cantidad", color="Gender", 
+            orientation="h", barmode="relative",
+            color_discrete_sequence=["#ef553b", "#636efa"]
+        )
+        st.plotly_chart(fig_piramide, use_container_width=True)
+    with col_der:
+        st.subheader("2. Correlación de Variables")
+        cols_numericas = df[["Age", "Quantity", "Price per Unit", "Total Amount"]]
+        matriz_corr = cols_numericas.corr()
+        fig_corr = px.imshow(
+            matriz_corr, text_auto=".2f", aspect="auto",
+            color_continuous_scale="Blues",
+            title="¿La edad influye en el monto gastado?"
+        )
+        st.plotly_chart(fig_corr, use_container_width=True)
