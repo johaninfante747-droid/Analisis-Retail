@@ -48,7 +48,7 @@ library(kableExtra)
 library(scales)
 ```
 
-\\chapter\*{Introducción}
+\chapter{Introducción}
 
 Introducción del trabajo de investigación
 
@@ -70,9 +70,7 @@ Argumento final. Debido a esto, se plantea las siguientes preguntas de investiga
 
 \section{Justificación}
 
-La presente investigación se justifica desde un punto de vista práctico y académico. En el ámbito práctico, el análisis descriptivo de bases de datos de clientes permite a cualquier negocio identificar a su público objetivo real y observar hechos concretos, como qué productos tienen mayor salida en ciertos meses o qué rango de edad consume más tecnología frente a artículos de hogar. Esta información es la piedra angular para cualquier toma de decisiones comerciales, diseño de campañas o gestión de inventario.
-
-Desde el punto de vista académico, este trabajo representa una aplicación directa y rigurosa de los fundamentos de estadística descriptiva y computación del primer semestre. Permite demostrar el dominio en la limpieza de datos, el uso de tablas de frecuencia, la visualización de datos (como la construcción de pirámides poblacionales) y el análisis de correlación simple. Al limitar el estudio a herramientas descriptivas, se garantiza un manejo profundo y preciso de los resultados obtenidos, sentando las bases analíticas necesarias para futuras investigaciones más complejas.
+La presente investigación se justifica desde un punto de vista práctico y académico. En el ámbito práctico, el análisis descriptivo de bases de datos de clientes permite a cualquier negocio identificar a su público objetivo real y observar hechos concretos, como qué productos tienen mayor salida en ciertos meses o qué rango de edad consume más tecnología frente a artículos de hogar. Esta información es la piedra angular para cualquier toma de decisiones comerciales, diseño de campañas o gestión de inventario. Desde el punto de vista académico, este trabajo representa una aplicación directa y rigurosa de los fundamentos de estadística descriptiva y computación del primer semestre. Permite demostrar el dominio en la limpieza de datos, el uso de tablas de frecuencia, la visualización de datos (como la construcción de pirámides poblacionales) y el análisis de correlación simple. Al limitar el estudio a herramientas descriptivas, se garantiza un manejo profundo y preciso de los resultados obtenidos, sentando las bases analíticas necesarias para futuras investigaciones más complejas.\
 
 \section{Objetivos}
 
@@ -100,15 +98,18 @@ La cobertura vertical del trabajo de investigación comprende un total de **1,00
 
 \begin{table}[ht]
 \centering
-\caption{Variables consideradas} 
-\resizebox{10cm}{!} {
+\caption{Variables consideradas}
+\resizebox{10cm}{!}{
 \begin{tabular}{ccc}
-  \hline
-\ \ \ \ \ TIPO \ \ \ \ \ VARIABLE \ \ \ \ \ DESCRIPCIÓN \\  
-  \hline
-   \ \ \ \ \ Categórica \ \ \ \ Género \ \ \ \ Identidad de género del cliente registrado
-   \ \ \ \ \ Numérica \ \ \ \ Edad \ \ \ \ Edad del consumidor expresada en años\\
-   \hline
+\hline
+TIPO & VARIABLE & DESCRIPCIÓN \\
+\hline
+Categórica & Género & Identidad de género del cliente registrado \\
+Numérica & Edad & Edad del consumidor expresada en años \\
+Categórica & Categoría\_Producto & Clasificación del artículo adquirido (ej. Tecnología, Hogar, Vestimenta) \\
+Numérica & Gasto\_Total & Monto monetario total gastado en la transacción \\
+Fecha/Numérica & Fecha\_Compra & Día, mes y año exacto de la transacción durante el periodo 2023 \\
+\hline
 \end{tabular}
 }
 \end{table}

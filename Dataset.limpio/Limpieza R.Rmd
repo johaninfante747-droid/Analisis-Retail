@@ -12,17 +12,17 @@ library(scales)
 ```
 
 ```{r}
-file_path <-"X16_Retail_Dataset_real"
+file_path <-"retail_limpio.csv"
 
-X16_Retail_Dataset_real <- read.csv(file_path)
+retail_limpio <- read.csv(file_path)
 
-head(X16_Retail_Dataset_real)
+head(retail_limpio)
 ```
 
 
 ```{r}
-X16_Retail_Dataset_real <- read.csv("X16_Retail_Dataset_real")
-df_limpio <- X16_Retail_Dataset_real %>%
+retail_limpio.csv <- read.csv("retail_limpio.csv")
+df_limpio <- retail_limpio.csv %>%
   drop_na() %>%
   distinct() %>%
   mutate(Date = ymd(Date))
