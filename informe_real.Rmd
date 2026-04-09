@@ -130,45 +130,75 @@ La variable principal de interés económico en este estudio es el **Gasto_Total
 
 \chapter{Marco Teórico}
 
+En el presente capítulo se exponen los fundamentos teóricos y metodológicos que sustentan el desarrollo de esta investigación. Dado que el objetivo central del proyecto es comprender la asociación entre los factores demográficos y los patrones de consumo en el sector minorista durante el año 2023, resulta indispensable establecer un marco de referencia claro. A continuación, se definen las herramientas de la estadística descriptiva y las técnicas de visualización de datos empleadas, las cuales permiten transformar los registros transaccionales crudos en información estratégica para la toma de decisiones, garantizando así la validez y el rigor analítico de los resultados obtenidos.
+
 \section{Bases Teóricas}
 
-Resumen de las bases teoricas explicadas en el capitulo y su importancia\
+Para sustentar el análisis del comportamiento de consumo en el sector retail durante el año 2023, la presente investigación se fundamenta en los siguientes conceptos estadísticos y analíticos:
 
-\subsection{Definición 1}
+\subsection{Análisis Exploratorio de Datos (EDA)}
 
-Descripción de la definición 1\
+El Análisis Exploratorio de Datos es un enfoque metodológico inicial en el análisis estadístico que tiene como objetivo resumir las características principales de un conjunto de datos, frecuentemente utilizando métodos visuales. En el contexto de las ventas minoristas, el EDA permite descubrir patrones de consumo, identificar anomalías y establecer la relación básica entre el perfil demográfico del cliente y su volumen de compra, sin la necesidad de formular modelos predictivos complejos desde el inicio.
 
-\subsection{Definición 2}
+\subsection{Estadistica Descriptiva}
 
-Descripción de la definición 2\
+Es la rama de la estadística encargada de recolectar, analizar y presentar los datos de manera estructurada y comprensible. Para este proyecto, se emplean medidas de tendencia central (como el promedio de edad) y medidas de frecuencia (como el conteo de transacciones totales) para resumir el comportamiento macro de la tienda en 2023.
 
-\subsection{Definición n}
+\subsection{Pirámide Poblacional}
 
-Descripción de la definición n\
+Es una representación gráfica, típicamente estructurada como un histograma bidireccional, que muestra la distribución de una población según grupos de edad y género. En el ámbito del retail, esta herramienta visual permite segmentar el mercado e identificar rápidamente qué segmento demográfico representa la mayor fuerza compradora del negocio, facilitando la toma de decisiones sobre inventario y marketing.
+
+```{r}
+fig.align='center'
+out.width='50%'
+knitr::include_graphics("Imagenes/piramide.png.png")
+```
+<div align="center"> <span style="font-size: 10pt;">*Figura 1, fuente: elaboracion propia a partir de referencias web.*</span> </div>
+\subsection{Matriz de Correlación}
+
+Es una tabla matemática que muestra los coeficientes de correlación entre diferentes variables numéricas. Su función principal es medir el grado de asociación lineal entre dos métricas (por ejemplo, la edad de un cliente y el monto total gastado). Los valores oscilan entre -1 y 1, donde valores cercanos a 1 indican una fuerte relación positiva, y los cercanos a 0 indican la ausencia de relación. Visualmente, se suele representar mediante un mapa de calor (Heatmap) para facilitar su interpretación.
+
+```{r}
+fig.align='center'
+out.width='50%'
+knitr::include_graphics("Imagenes/Matriz de correlacion.png.png")
+```
+<div align="center"> <span style="font-size: 10pt;">*Figura 2, fuente: elaboracion propia a partir de referencias web.*</span> </div>
+\subsection{Análisis de Estacionalidad (Series de Tiempo Simples)}
+
+Se refiere al estudio de las variaciones o fluctuaciones periódicas en los datos a lo largo de un ciclo temporal específico (en este caso, los doce meses del año). Utilizando gráficos de líneas, se busca identificar picos de demanda y valles de ventas, lo cual es fundamental en el comercio minorista para planificar la reposición de mercancía en temporadas altas.
+
+\subsection{Tablas de Contingencia y Gráficos de Barras Apiladas}
+
+Una tabla de contingencia es una herramienta que tabula la frecuencia de observaciones de múltiples variables categóricas. Gráficamente, esto se traduce en gráficos de barras apiladas, los cuales permiten observar la proporción que ocupa cada subcategoría (por ejemplo, el tipo de producto) dentro de un grupo mayor (los rangos de edad). Esta técnica es ideal para responder interrogantes sobre preferencias de productos específicas por segmento etario.
 
 \chapter{Marco Metódico}
 
-En esta sección se presentan las metodologías y/o test necesarios relacionados con la práctica divulgada en el marco teórico, así como las fuentes de datos.
+En este capítulo se describen los procedimientos, técnicas y herramientas tecnológicas empleadas para llevar a cabo el Análisis Exploratorio de Datos (EDA) sobre los registros de ventas del sector minorista correspondientes al año 2023. Se detalla el tratamiento aplicado a la base de datos y la justificación de los recursos computacionales utilizados.
 
 \section{Bases metódicas utilizadas en el trabajo de investigación}
 
-Desarrollo\
+\subsection{Origen y Tratamiento de los Datos}
 
-\subsection{Item 1}
+El análisis se fundamentó en un conjunto de datos estructurado (denominado computacionalmente como DataFrame), el cual contiene el registro histórico de las transacciones. Para garantizar la viabilidad del análisis estadístico, se aplicaron técnicas de limpieza y transformación de datos (Data Wrangling), destacando las siguientes operaciones metodológicas:
 
-Descripción\
+\begin{itemize}
+\item{Transformación temporal: Se convirtió la variable de la fecha de compra a un formato estandarizado de series de tiempo (Datetime) para poder aislar y agrupar los datos según la estacionalidad mensual.}
 
-\subsection{Item 2}
+\item{Discretización de variables (Binning): Para la creación de la pirámide poblacional, se transformó la variable continua "Edad" en una variable categórica ("Rango Edad"). Se agruparon a los clientes en cinco intervalos específicos (<25, 26-35, 36-45, 46-55, 56+), lo que permitió cruzar esta información demográfica con las preferencias de categorías de productos.}
+\end{itemize}
 
-Descripción\
+\subsection{Herramientas y Lenguajes de Programación}
 
-\subsubsection{Item 2.2}
+Para la ejecución de este marco metodológico, se seleccionó el lenguaje de programación Python, reconocido por su robustez en la ciencia de datos. El procesamiento se llevó a cabo mediante la integración de las siguientes librerías especializadas:
 
-Descripción\
+\begin{itemize}
+\item{Pandas: Utilizada como la estructura principal para la manipulación de datos. Mediante esta librería se ejecutaron las funciones de agrupación poblacional y el cálculo matemático de la matriz de correlación de Pearson/Spearman para evaluar la relación entre la edad y el monto de compra.}
 
-\subsection{Item n}
+\item{Plotly Express: Herramienta seleccionada para la visualización gráfica de los datos. Su implementación metodológica permitió construir representaciones bidireccionales (para el contraste de géneros) y mapas de calor (Heatmaps), superando las limitaciones de los gráficos estáticos tradicionales.}
 
-Descripción\
+\item{Streamlit: Framework empleado para estructurar lógicamente los resultados en un panel de control interactivo (Dashboard), facilitando la segmentación visual de los objetivos demográficos y de consumo a través de pestañas dinámicas. Adicionalmente, se implementaron componentes de interfaz de usuario (Widgets), específicamente un control deslizante (Slider), que permite filtrar la base de datos en tiempo real según rangos de edad personalizados, garantizando una exploración analítica profunda y focalizada.}
+\end{itemize}
 
 \chapter{Análisis de Resultados}
 
