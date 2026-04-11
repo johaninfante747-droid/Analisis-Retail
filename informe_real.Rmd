@@ -148,9 +148,7 @@ Es la rama de la estadística encargada de recolectar, analizar y presentar los 
 
 Es una representación gráfica, típicamente estructurada como un histograma bidireccional, que muestra la distribución de una población según grupos de edad y género. En el ámbito del retail, esta herramienta visual permite segmentar el mercado e identificar rápidamente qué segmento demográfico representa la mayor fuerza compradora del negocio, facilitando la toma de decisiones sobre inventario y marketing.
 
-```{r}
-fig.align='center'
-out.width='50%'
+```{r, fig.align='center', out.width="50%"}
 knitr::include_graphics("Imagenes/piramide.png.png")
 ```
 <div align="center"> <span style="font-size: 10pt;">*Figura 1, fuente: elaboracion propia a partir de referencias web.*</span> </div>
@@ -158,9 +156,7 @@ knitr::include_graphics("Imagenes/piramide.png.png")
 
 Es una tabla matemática que muestra los coeficientes de correlación entre diferentes variables numéricas. Su función principal es medir el grado de asociación lineal entre dos métricas (por ejemplo, la edad de un cliente y el monto total gastado). Los valores oscilan entre -1 y 1, donde valores cercanos a 1 indican una fuerte relación positiva, y los cercanos a 0 indican la ausencia de relación. Visualmente, se suele representar mediante un mapa de calor (Heatmap) para facilitar su interpretación.
 
-```{r}
-fig.align='center'
-out.width='50%'
+```{r, fig.align='center', out.width="50%"}
 knitr::include_graphics("Imagenes/Matriz de correlacion.png.png")
 ```
 <div align="center"> <span style="font-size: 10pt;">*Figura 2, fuente: elaboracion propia a partir de referencias web.*</span> </div>
@@ -202,33 +198,81 @@ Para la ejecución de este marco metodológico, se seleccionó el lenguaje de pr
 
 \chapter{Análisis de Resultados}
 
-{\small Este capítulo presenta los resultados obtenidos al aplicar las metodologías descritas en el capítulo anterior, así como del análisis estadístico descriptivo de las variables estudiadas y las ventajas y desventajas al aplicar dichos tests.}
+Este capítulo presenta los resultados obtenidos al aplicar las metodologías descritas en el capítulo anterior, enfocándose en el análisis estadístico descriptivo de las variables transaccionales y demográficas del año 2023 a través del panel interactivo.
 
-\section{Presentación de resultados 1}
+\section{Ventajas y Desventajas de los Tests Aplicados}
 
-Descripción\
+Antes de detallar los hallazgos visuales, es metodológicamente pertinente evaluar el alcance de las herramientas estadísticas empleadas en este Análisis Exploratorio de Datos (EDA):
 
-\section{Presentación de resultados 2}
+\subsection{Matriz de Correlación:}
+\begin{itemize}
+\item{Ventajas: Permite identificar visual y numéricamente la fuerza y dirección de la relación lineal entre múltiples variables numéricas (por ejemplo, contrastar si la Edad afecta el Total Gastado).}
 
-Descripción\
+\item{Desventajas: Mide únicamente asociación matemática, no causalidad. Adicionalmente, el test clásico de Pearson puede ser sensible a valores atípicos (outliers) que distorsionen el coeficiente.}
+\end{itemize}
 
-\section{Presentación de resultados n}
+\subsection{Discretización Demográfica:}
+\begin{itemize}
+\item{Ventajas: Transformar la variable continua Edad en rangos categóricos facilita enormemente la interpretación visual y la detección de patrones macro en el comportamiento de consumo por generaciones.}
 
-Descripción\
+\item{Desventajas: Al agrupar los datos se pierde la varianza interna y la granularidad de la variable original, asumiendo que un cliente de 26 años se comporta exactamente igual que uno de 35 por pertenecer al mismo segmento.}
+\end{itemize}
+
+\section{Análisis de la Estructura Demográfica}
+
+Para comprender la composición demográfica de la base de clientes y determinar qué segmento representa la mayor fuerza compradora del negocio, se generó una pirámide poblacional a partir de los datos transaccionales. Como se observa en la siguiente figura, esta distribución visual permite contrastar claramente la participación de hombres y mujeres segmentados por sus respectivos rangos etarios durante el año 2023.
+
+```{r, fig.align='center', out.width="50%"}
+knitr::include_graphics("Imagenes/Piramide.jpg")
+```
+Al observar la gráfica, se evidencia que el grueso de los consumidores se concentra en el rango de 26 a 35 años, destacando una participación equitativa entre hombres y mujeres, alcanzando aproximadamente 100 transacciones por género en este segmento. Por el contrario, el grupo de menores de 25 años representa la minoría absoluta de la clientela, lo que sugiere que las estrategias de marketing actuales de la tienda no están captando la atención de la generación más joven, teniendo mayor resonancia con un público adulto.
+
+\section{Correlación de Variables Numéricas}
+
+Para evaluar estadísticamente las dinámicas de compra y comprobar empíricamente si el perfil demográfico determina el volumen de gasto, se ejecutó una matriz de correlación visualizada mediante un mapa de calor (Heatmap). Esta herramienta permite medir la fuerza y dirección de la relación lineal entre las variables transaccionales clave del año 2023.
+
+```{r, fig.align='center', out.width="50%"}
+knitr::include_graphics("Imagenes/Matriz.jpg")
+```
+El análisis de la matriz revela un hallazgo fundamental para el negocio: la variable Edad (Age) presenta una correlación prácticamente nula con el monto total gastado (Total Amount, reflejando un coeficiente de -0.06). Esto indica que la edad del consumidor no es un factor predictivo sobre su nivel de gasto. Por el contrario, el ingreso total está fuertemente impulsado por el Precio por Unidad (Price per Unit), el cual muestra una alta correlación positiva de 0.85, indicando que las ventas de la tienda dependen más de artículos de alto valor que del volumen masivo de artículos económicos (cuya correlación con la cantidad es de apenas 0.37).
+
+\section{Estacionalidad y Flujo de Ingresos Mensuales}
+
+El seguimiento temporal de las ventas es un componente vital del análisis exploratorio, ya que permite identificar los picos de demanda y las fluctuaciones estacionales a lo largo del año 2023. Esta información resulta estratégica para la optimización de inventarios y la planificación de futuras campañas de marketing. En la siguiente figura se ilustra la evolución de los ingresos totales consolidados mensualmente.
+
+```{r, fig.align='center', out.width="50%"}
+knitr::include_graphics("Imagenes/Lineas.jpg")
+```
+El análisis temporal revela una alta volatilidad en los ingresos a lo largo del año, caracterizada por fluctuaciones abruptas en lugar de una tendencia de crecimiento estable. El pico máximo de ventas se registró durante el mes 5 (mayo), superando los $50,000 en ingresos, seguido de repuntes secundarios significativos en febrero (mes 2) y octubre (mes 10). Por el contrario, el mes 9 (septiembre) representó una caída crítica para el negocio, registrando el nivel de ingresos más bajo de todo el periodo (por debajo de los 25,000). Este comportamiento cíclico sugiere que el negocio depende de temporadas muy específicas, lo que exige estrategias de inventario ágiles para los meses de alta demanda y promociones más agresivas para mitigar las caídas en el tercer trimestre.
+
+\section{Preferencias de Categorías por Edad}
+
+Finalmente, para trazar estrategias de marketing y abastecimiento mucho más precisas, es necesario cruzar la estructura demográfica con el comportamiento de compra específico. El siguiente gráfico ilustra cómo se distribuye la demanda de las distintas categorías de productos (como Ropa, Electrónica y Belleza) dentro de cada segmento de edad.
+
+```{r, fig.align='center', out.width="50%"}
+knitr::include_graphics("Imagenes/Barras.jpg")
+```
+El cruce de variables revela que el segmento de 46 a 55 años es el que registra el mayor volumen total de transacciones, impulsado significativamente por una alta demanda en la categoría de Electrónica (Electronics). Por otro lado, la categoría de Ropa (Clothing) mantiene una demanda sólida y constante, predominando fuertemente en los consumidores mayores de 36 años. Finalmente, los artículos de Belleza (Beauty) presentan un consumo estable y transversal en todas las edades, sin llegar a dominar de forma absoluta ningún segmento demográfico. Estos resultados sugieren estratégicamente que las campañas de marketing para productos tecnológicos de alto valor deberían focalizarse en el público de mediana edad, desmitificando la idea de que la electrónica es exclusiva de los segmentos más jóvenes.
 
 \chapter{Conclusiones y Recomendaciones}
 
-\textbf{1.-} Conclusion 1 del trabajo de investigación.\
+A partir del Análisis Exploratorio de Datos (EDA) aplicado a los registros transaccionales del sector retail durante el año 2023, se derivan las siguientes conclusiones fundamentales:
 
-\textbf{Recomendación} Recomendación 1 del trabajo de investigación.\
+\textbf{1.-} El análisis demostró empíricamente que la edad del consumidor no tiene un impacto predictivo sobre su nivel de gasto (r = -0.06), siendo los ingresos impulsados principalmente por la venta de artículos de alto valor unitario (r = 0.85).
 
-\textbf{2.-} Conclusion 2 del trabajo de investigación.\
+\textbf{Recomendación} Fomentar el upselling. Se sugiere capacitar a la fuerza de ventas e implementar algoritmos de recomendación que incentiven la compra de productos Premium, maximizando el valor del ticket promedio.
 
-\textbf{Recomendación} Recomendación 2 del trabajo de investigación.\
+\textbf{2.-} Existe una brecha generacional en la captación. Aunque el volumen demográfico principal se concentra en adultos jóvenes (26 a 35 años), el negocio no está logrando penetrar en la generación más joven (<25 años).
 
-\textbf{n.-} Conclusion n del trabajo de investigación.\
+\textbf{Recomendación} Diseñar campañas de captación para la Generación más joven, utilizando estrategias de inbound marketing y programas de fidelización orientados específicamente a este segmento de mercado actualmente desaprovechado.
 
-\textbf{Recomendación} Recomendación n del trabajo de investigación.\
+\textbf{3.-} Contrario a los supuestos tradicionales, el segmento entre 46 y 55 años resultó ser el motor transaccional más fuerte del año, impulsado abrumadoramente por la adquisición de productos de Electrónica.
+
+\textbf{Recomendación} Redirigir y focalizar la pauta publicitaria de los artículos tecnológicos hacia los consumidores de 46 a 55 años, utilizando canales y mensajes acordes a su poder adquisitivo en lugar de enfocarse solo en el público juvenil.
+
+\textbf{4.-} La rentabilidad del negocio presenta una alta vulnerabilidad estacional, con una dependencia crítica del mes pico (mayo) y una preocupante caída de ingresos en el tercer trimestre (septiembre).
+
+\textbf{Recomendación} Implementar estrategias de inventario ágil, garantizando el máximo abastecimiento entre abril y mayo, y estructurar campañas de descuentos agresivos para septiembre con el fin de mitigar las caídas de demanda.
 
 \appendix
 \renewcommand{\thechapter}{\Alph{chapter}}
