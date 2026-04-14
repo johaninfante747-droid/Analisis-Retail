@@ -279,6 +279,24 @@ df %>%
   )
 ```
 
+```{r}
+ggplot(df, aes(x = Product.Category, y = Total.Amount, fill = Product.Category)) +
+  geom_boxplot(alpha = 0.8, outlier.color = "black", outlier.shape = 16) +
+  theme_minimal() +
+  labs(
+    title = "Distribucion del Gasto Total por Categoria",
+    x = "Categoria de Producto",
+    y = "Monto Total Gastado ($)",
+    fill = "Categoria"
+  ) +
+  scale_fill_manual(values = c("Beauty" = "darkred", "Clothing" = "steelblue", "Electronics" = "pink")) +
+  theme(legend.position = "none")
+```
+
+Como complemento visual a las estadísticas descriptivas presentadas en la Tabla 4.1, el gráfico de cajas permite observar la verdadera distribución interna del gasto, revelando matices del comportamiento de compra que el promedio aritmético tiende a ocultar debido a la alta varianza de los datos. Se evidencia una fuerte asimetría hacia la derecha en las tres categorías, con una línea central (la mediana) situada en niveles considerablemente bajos, oscilando entre los \$100 y \$150. Esto demuestra estadísticamente que la mitad de las transacciones realizadas en la tienda corresponden a compras de bajo ticket, un comportamiento típico de consumo masivo en el sector retail que asegura el flujo de caja regular.
+
+Por otro lado, al evaluar la dispersión a través del rango intercuartílico, se aprecian diferencias en los hábitos de consumo. Las categorías de Beauty y Electronics presentan una mayor amplitud, extendiendo su tercer cuartil casi hasta los $900, mientras que Clothing exhibe una distribución más compacta, sugiriendo un gasto mucho más estandarizado en prendas de vestir. Sin embargo, el aspecto más determinante es la longitud de los bigotes superiores y la marcada presencia de valores atípicos (registrando compras por encima de los \$1,500 e incluso llegando a los \$2,000). Esta característica estadística explica el porqué de un gasto promedio tan elevado frente a una mediana baja, y confirma comercialmente que el ingreso del negocio depende de un modelo híbrido: se sostiene mediante un alto volumen de ventas económicas, pero su facturación total es fuertemente impulsada por clientes esporádicos que ejecutan compras premium en cualquiera de los tres rubros.
+
 Para comprender la composición demográfica de la base de clientes y determinar qué segmento representa la mayor fuerza compradora del negocio, se generó una pirámide poblacional a partir de los datos transaccionales. Como se observa en la siguiente figura, esta distribución visual permite contrastar claramente la participación de hombres y mujeres segmentados por sus respectivos rangos etarios durante el año 2023.
 
 ```{r}
