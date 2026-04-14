@@ -210,6 +210,16 @@ Para la ejecución de este marco metodológico, se seleccionó el lenguaje de pr
 \item{Streamlit: Framework empleado para estructurar lógicamente los resultados en un panel de control interactivo (Dashboard), facilitando la segmentación visual de los objetivos demográficos y de consumo a través de pestañas dinámicas. Adicionalmente, se implementaron componentes de interfaz de usuario (Widgets), específicamente un control deslizante (Slider), que permite filtrar la base de datos en tiempo real según rangos de edad personalizados, garantizando una exploración analítica profunda y focalizada.}
 \end{itemize}
 
+De forma complementaria, para el análisis estático presentado en este documento, así como para la generación y automatización del informe académico, se integró el lenguaje de programación R a través del entorno RStudio. Para esta fase del procesamiento se emplearon los siguientes paquetes:
+
+\begin{itemize}
+\item{Tidyverse(dplyr): Implementando para la manipulación de los datos exhibidos en el informe, facilitando la limpieza, agrupación poblacional y la discretización de variables continuas para el análisis descriptivo.}
+
+\item{ggplot2: Utilizado para la construcción de las representaciones gráficas estáticas integradas en el documento.}
+
+\item{kableExtra: Empleado como motor de renderizado para la compilación dinámica del proyecto y formateo estético de las tablas de resumen estadístico.}
+\end{itemize}
+
 \chapter{Análisis de Resultados}
 
 Este capítulo presenta los resultados obtenidos al aplicar las metodologías descritas en el capítulo anterior, enfocándose en el análisis estadístico descriptivo de las variables transaccionales y demográficas del año 2023 a través del panel interactivo.
@@ -241,10 +251,22 @@ df$Rango_Edad <- cut(df$Age, breaks=c(0,25,35,45,55,100), labels=c("<25","26-35"
 \section{Estadistica descriptiva por categoria}
 
 ```{r}
+#Recuerden que esto es una tabla que aparecerá en el PDF una vez se renderice ya que el visor interno de Rstudio no sabe como dibujar LateX aqui, Así que es normal que se vea en Blanco
 df %>%
-group_by(Categoria = Product.Category) %>%
-summarise(Transacciones = n(), Edad_Promedio = round (mean(Age), 1),  Gasto_Promedio = round(mean(Total.Amount), 2), Desv_Estandar = round(sd(Total.Amount), 2), Ingreso_Total = sum(Total.Amount))%>%
-kable(format = "latex", booktabs = TRUE, caption = "Estadísticas descriptivas de consumo por categoría")
+  group_by(Categoria = Product.Category) %>%
+  summarise(
+    Transacciones = n(),
+    Edad_Promedio = round(mean(Age), 1),
+    Gasto_Promedio = round(mean(Total.Amount), 2),
+    Desv_Estandar = round(sd(Total.Amount), 2),
+    Ingreso_Total = sum(Total.Amount)
+  ) %>%
+  kable(
+    format = "latex",
+    booktabs = FALSE,
+    #Lo desactivo a ultima instancia porque requiere de un paquete extra instalado de LateX del que me entero ahora.
+    caption = "Estadisticas descriptivas de consumo por categoria"
+  )
 ```
 
 Para comprender la composición demográfica de la base de clientes y determinar qué segmento representa la mayor fuerza compradora del negocio, se generó una pirámide poblacional a partir de los datos transaccionales. Como se observa en la siguiente figura, esta distribución visual permite contrastar claramente la participación de hombres y mujeres segmentados por sus respectivos rangos etarios durante el año 2023.
@@ -353,9 +375,3 @@ A partir del análisis exploratorio y la aplicación de métodos estadísticos s
 
 \appendix
 \renewcommand{\thechapter}{\Alph{chapter}}
-
-\chapter{Anexo A}
-
-\chapter{Anexo B}
-
-\chapter{Anexo C}
