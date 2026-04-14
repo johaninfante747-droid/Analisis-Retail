@@ -143,6 +143,14 @@ with tab3:
         st.plotly_chart(fig_box, use_container_width=True)
 
 st.write("---")
-with st.expander("Base de datos limpia"):
-    st.write("Datos transaccionales filtrados y procesados:")
-    st.dataframe(df)
+st.subheader("Exploración y Exportación de Datos")
+
+with st.expander("Ver y descargar base de datos filtrada"):
+    st.dataframe(df, use_container_width=True)
+    csv = df.to_csv(index=False).encode('utf-8')
+    st.download_button(
+        label="Descargar estos datos (CSV)",
+        data=csv,
+        file_name="retail_datos_filtrados.csv",
+        mime="text/csv"
+    )
