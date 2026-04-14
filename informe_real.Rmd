@@ -26,7 +26,12 @@ facultad:
 escudo: Latex/Classes/Escudos/faces
 bibliography: bibliografia.bib
 degree: Computación I
-abstract: Resumen del trabajo de investigación...
+abstract: > 
+  El presente trabajo de investigación analiza el comportamiento del consumidor y los patrones de gasto en una empresa del sector retail durante el año 2023. El objetivo principal fue identificar cómo los factores demográficos influyen en las decisiones de compra y en la estabilidad operativa del negocio. Para ello, se empleó un diseño de investigación cuantitativo y descriptivo, aplicando técnicas de Análisis Exploratorio de Datos (EDA) sobre un registro transaccional, utilizando el lenguaje de programación R para la modelación y visualización estadística.
+
+  Los resultados demostraron empíricamente la ausencia de una correlación lineal entre la edad del cliente y el volumen de gasto (r = -0.06), indicando que las compras de alto valor ocurren transversalmente. Asimismo, se identificó que el núcleo transaccional del negocio recae en el segmento de 46 a 55 años, quienes lideran el consumo en la categoría de Electrónica, mientras que se evidenció una penetración marginal en la Generación Z. Finalmente, el análisis de la serie de tiempo reveló una alta volatilidad del flujo comercial, con un pico máximo de transacciones en mayo y una caída crítica en septiembre. 
+
+  Se concluye que el negocio requiere una reestructuración estratégica, abandonando los sesgos de segmentación tradicionales y adoptando tácticas de inventario dinámico para mitigar las fluctuaciones mensuales.
 ---
 
 ```{r setup, include=FALSE}
@@ -48,7 +53,11 @@ library(kableExtra)
 library(scales)
 ```
 
-\chapter{Introducción}
+\newpage
+\markboth{INTRODUCCIÓN}{INTRODUCCIÓN}
+\addcontentsline{toc}{chapter}{Introducción}
+\vspace*{1cm}
+
 
 \chapter{Planteamiento del Problema}
 
@@ -323,23 +332,31 @@ El cruce de variables demográficas y comerciales mediante barras apiladas revel
 
 \chapter{Conclusiones y Recomendaciones}
 
-A partir del Análisis Exploratorio de Datos (EDA) aplicado a los registros transaccionales del sector retail durante el año 2023, se derivan las siguientes conclusiones fundamentales:
+A partir del análisis exploratorio y la aplicación de métodos estadísticos sobre la base de datos transaccional del año 2023, se da respuesta formal a los objetivos planteados al inicio de esta investigación:
 
-\textbf{1.-} El análisis demostró empíricamente que la edad del consumidor no tiene un impacto predictivo sobre su nivel de gasto (r = -0.06), siendo los ingresos impulsados principalmente por la venta de artículos de alto valor unitario (r = 0.85).
+\textbf{1.-} Sobre la Estructura Demográfica del Consumidor 
 
-\textbf{Recomendación} Fomentar el upselling. Se sugiere capacitar a la fuerza de ventas e implementar algoritmos de recomendación que incentiven la compra de productos Premium, maximizando el valor del ticket promedio.
+\textbf{Conclusión} Se comprobó que el núcleo transaccional del negocio no reside en el público juvenil. La mayor concentración de compras es ejecutada por el segmento de adultos entre 46 y 55 años. Simultáneamente, se evidenció una profunda debilidad en la captación de los jovenes menores de 25 años, cuya participación comercial es estadísticamente marginal.
 
-\textbf{2.-} Existe una brecha generacional en la captación. Aunque el volumen demográfico principal se concentra en adultos jóvenes (26 a 35 años), el negocio no está logrando penetrar en la generación más joven (\<25 años).
+\textbf{Recomendación} Diseñar estrategias de inbound marketing y programas de fidelización orientados específicamente a captar al segmento menor de 25 años, un nicho de mercado actualmente desaprovechado. Al mismo tiempo, se deben mantener los estándares de servicio para proteger la retención del segmento de 46 a 55 años, que representa el soporte actual del negocio.
 
-\textbf{Recomendación} Diseñar campañas de captación para la Generación más joven, utilizando estrategias de inbound marketing y programas de fidelización orientados específicamente a este segmento de mercado actualmente desaprovechado.
+\textbf{2.-} Sobre el Impacto de la Edad en el Nivel de Gasto 
 
-\textbf{3.-} Contrario a los supuestos tradicionales, el segmento entre 46 y 55 años resultó ser el motor transaccional más fuerte del año, impulsado abrumadoramente por la adquisición de productos de Electrónica.
+\textbf{Conclusión} Mediante el análisis visual de dispersión y el cálculo de correlación, se demostró empíricamente la ausencia de relación lineal (r = -0.06) entre la edad del cliente y el monto gastado. Las compras de alto valor ocurren de manera transversal y uniforme sin importar la etapa de vida del consumidor.
 
-\textbf{Recomendación} Redirigir y focalizar la pauta publicitaria de los artículos tecnológicos hacia los consumidores de 46 a 55 años, utilizando canales y mensajes acordes a su poder adquisitivo en lugar de enfocarse solo en el público juvenil.
+\textbf{Recomendación} Evitar la segmentación de precios basada en la edad. Se sugiere implementar estrategias de venta cruzada (cross-selling) y ventas de mayor valor (upselling) aplicables a toda la base de clientes por igual, ya que un consumidor de 20 años tiene la misma probabilidad estadística de realizar una compra costosa que uno de 60 años.
 
-\textbf{4.-} La rentabilidad del negocio presenta una alta vulnerabilidad estacional, con una dependencia crítica del mes pico (mayo) y una preocupante caída de ingresos en el tercer trimestre (septiembre).
+\textbf{3.-} Sobre la Evolución Temporal de las Transacciones 
 
-\textbf{Recomendación} Implementar estrategias de inventario ágil, garantizando el máximo abastecimiento entre abril y mayo, y estructurar campañas de descuentos agresivos para septiembre con el fin de mitigar las caídas de demanda.
+\textbf{Conclusión} El análisis de la serie de tiempo simple de 2023 descartó un comportamiento de ingresos estable, revelando en su lugar una alta volatilidad operativa. Se identificó un pico máximo de transacciones durante el mes de mayo, contrastando drásticamente con una caída crítica del volumen de ventas durante el mes de septiembre.
+
+\textbf{Recomendación} Implementar una estrategia de inventario ágil y compras anticipadas para garantizar el máximo abastecimiento en el segundo trimestre (abril-mayo). Paralelamente, es imperativo estructurar campañas de descuentos agresivos y promociones especiales para el mes de septiembre, con el fin de mitigar la histórica contracción de la demanda.
+
+\textbf{4.-} Sobre las Preferencias por Categoría de Producto 
+
+\textbf{Conclusión} El cruce de categorías con rangos etarios desmitificó supuestos comerciales clásicos. La categoría de Electrónica es el principal motor de ingresos y es consumida abrumadoramente por el segmento mayor (46-55 años). La categoría de Ropa domina a partir de los 36 años, mientras que los artículos de Belleza mantienen un consumo base que no distingue edades.
+
+\textbf{Recomendación} Redirigir el presupuesto de las campañas publicitarias de artículos tecnológicos. En lugar de enfocar la publicidad de electrónica exclusivamente en el público joven, la pauta debe focalizarse en los consumidores de mediana edad, utilizando canales y mensajes acordes a su perfil, ya que son ellos quienes demuestran el verdadero poder adquisitivo en este rubro.
 
 \appendix
 \renewcommand{\thechapter}{\Alph{chapter}}
