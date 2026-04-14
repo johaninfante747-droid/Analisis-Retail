@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 16. Retail.csv
+*.log
+*.tex
+*.html
