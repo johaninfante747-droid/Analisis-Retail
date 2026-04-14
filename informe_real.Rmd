@@ -58,9 +58,7 @@ library(scales)
 
 \chapter{Planteamiento del Problema}
 
-En la actualidad, el sector minorista (retail) se enfrenta a un entorno altamente competitivo donde la comprensión del cliente es vital. Tal como lo demuestra el Estudio Retail 2024-2025 de la firma de análisis GfK, las dinámicas de consumo y la frecuencia de compra están directamente vinculadas a la segmentación generacional y el perfil del comprador, obligando a las marcas a estudiar sus datos demográficos para anticipar el comportamiento del mercado. Las empresas ya no solo venden productos sino que gestionan información estratégica para optimizar su inventario y fidelizar a sus consumidores.
-
-A partir de esta realidad, surge la necesidad de aplicar este mismo enfoque analítico a nivel micro. Al disponer de un conjunto de datos transaccionales del año 2023 de una tienda *retail*, existe la oportunidad de extraer información valiosa que describa quiénes son los clientes y cómo interactúan con los productos ofrecidos. El problema central radica en transformar estos datos crudos en información estructurada que permita comprender las dinámicas básicas de consumo sin recurrir a modelos predictivos complejos, basándose estrictamente en el comportamiento histórico registrado.
+En la actualidad, el sector minorista (retail) se enfrenta a un entorno altamente competitivo donde la comprensión del cliente es vital. Tal como lo señala la firma de análisis NIQ y GfK (2024) en su \textit{Estudio Retail 2024-2025}: \`\`las tendencias actuales subrayan la importancia de adaptar las estrategias de venta a los perfiles generacionales [...] evidenciando una fuerte correlación entre las poblaciones y su interés comercial\`\`. Las dinámicas de consumo y la frecuencia de compra están directamente vinculadas a la segmentación generacional y el perfil del comprador, obligando a las marcas a estudiar sus datos demográficos para anticiparse al comportamiento del mercado. Las empresas ya no solo venden productos sino que gestionan información estratégica para optimizar su inventario y fidelizar a sus consumidores.A partir de esta realidad, surge la necesidad de aplicar este mismo enfoque analítico a nivel micro. Al disponer de un conjunto de datos transaccionales del año 2023 de una tienda *retail*, existe la oportunidad de extraer información valiosa que describa quiénes son los clientes y cómo interactúan con los productos ofrecidos. El problema central radica en transformar estos datos crudos en información estructurada que permita comprender las dinámicas básicas de consumo sin recurrir a modelos predictivos complejos, basándose estrictamente en el comportamiento histórico registrado.
 
 El problema central de esta investigación radica en determinar: ¿Existe una asociación observable entre el perfil demográfico del consumidor y sus hábitos de gasto y elección de productos en el conjunto de datos de 2023?
 
@@ -245,7 +243,7 @@ df$Rango_Edad <- cut(df$Age, breaks=c(0,25,35,45,55,100), labels=c("<25","26-35"
 ```{r}
 df %>%
 group_by(Categoria = Product.Category) %>%
-summarise(Transacciones = n() , Edad_Promedio = round (mean(Age), 1), Gasto_Promedio = round(mean(Total.Amount), 2), Desv_Estandar = round(sd(Total.Amount), 2), Ingreso_Total = sum(Total.Amount))%>%
+summarise(Transacciones = n(), Edad_Promedio = round (mean(Age), 1),  Gasto_Promedio = round(mean(Total.Amount), 2), Desv_Estandar = round(sd(Total.Amount), 2), Ingreso_Total = sum(Total.Amount))%>%
 kable(format = "latex", booktabs = TRUE, caption = "Estadísticas descriptivas de consumo por categoría")
 ```
 
@@ -285,7 +283,7 @@ ggplot(df, aes(x = Age, y = Total.Amount)) +
   labs(
     x = "Edad del Cliente", 
     y = "Monto Total Gastado ($)",
-    title = "Correlación entre Edad y Gasto"
+    title = "Correlacion entre Edad y Gasto"
   )
 ```
 
@@ -306,7 +304,7 @@ ggplot(df_ts, aes(x = Mes, y = Ingresos, group = 1)) +
   geom_point(color = "darkblue", size = 2) + 
   theme_minimal() + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "Meses del Año 2023", y = "Ingresos Totales ($)")
+  labs(x = "Meses del Ano 2023", y = "Ingresos Totales ($)")
 ```
 
 El análisis de la serie de tiempo simple, basado en el volumen de transacciones, revela una alta volatilidad en el flujo comercial durante el año 2023. En lugar de exhibir una tendencia estable, el comportamiento de compra fluctúa significativamente mes a mes. El pico máximo de actividad operativa se registró en mayo, superando la barrera de las 100 transacciones mensuales, seguido de repuntes importantes en el último trimestre (octubre y diciembre). Por el contrario, el mes de septiembre representó una contracción crítica en la afluencia, registrando el nivel más bajo del periodo (aproximadamente 65 transacciones). Este patrón irregular demuestra que el negocio opera bajo ciclos de demanda muy marcados, lo que exige estrategias ágiles: garantizar el máximo abastecimiento en mayo e implementar campañas agresivas para impulsar el tráfico de clientes durante la caída de septiembre.
@@ -319,7 +317,7 @@ Finalmente, para trazar estrategias de marketing y abastecimiento mucho más pre
 ggplot(df, aes(x = Rango_Edad, fill = Product.Category)) +
   geom_bar(position = "stack", color = "black", linewidth = 0.2) +
   theme_minimal() +
-  labs(x = "Rango de Edad (Años)", y = "Cantidad de Transacciones", fill = "Categoría") +
+  labs(x = "Rango de Edad (Anos)", y = "Cantidad de Transacciones", fill = "Categoria") +
   scale_fill_manual(values = c("red", "blue", "green"))
 ```
 

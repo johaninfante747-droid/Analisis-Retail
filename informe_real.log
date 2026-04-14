@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.2)  14 APR 2026 10:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.2)  14 APR 2026 12:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -845,31 +845,31 @@ LaTeX Info: Redefining \% on input line 137.
 ]
 Cap\'{\i }tulo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--176
+Underfull \hbox (badness 10000) in paragraph at lines 175--178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--195
+Underfull \hbox (badness 10000) in paragraph at lines 181--197
 
  []
 
 [2
 
 ]
-LaTeX Info: Redefining \. on input line 220.
-LaTeX Info: Redefining \% on input line 220.
+LaTeX Info: Redefining \. on input line 222.
+LaTeX Info: Redefining \% on input line 222.
 [3]
-LaTeX Info: Redefining \. on input line 269.
-LaTeX Info: Redefining \% on input line 269.
-[4]
 LaTeX Info: Redefining \. on input line 271.
 LaTeX Info: Redefining \% on input line 271.
+[4]
+LaTeX Info: Redefining \. on input line 273.
+LaTeX Info: Redefining \% on input line 273.
 [5]
 Cap\'{\i }tulo 2.
 [6
@@ -878,29 +878,29 @@ Cap\'{\i }tulo 2.
 <Imagenes/piramide.png.png, id=247, 770.88pt x 743.77875pt>
 File: Imagenes/piramide.png.png Graphic file (type png)
 <use Imagenes/piramide.png.png>
-Package pdftex.def Info: Imagenes/piramide.png.png  used on input line 330.
+Package pdftex.def Info: Imagenes/piramide.png.png  used on input line 332.
 (pdftex.def)             Requested size: 206.28247pt x 199.02979pt.
-LaTeX Info: Redefining \. on input line 346.
-LaTeX Info: Redefining \% on input line 346.
+LaTeX Info: Redefining \. on input line 348.
+LaTeX Info: Redefining \% on input line 348.
 [7 <./Imagenes/Piramide.png.png>]
 <Imagenes/Matriz de correlacion.png.png, id=253, 752.0597pt x 557.08125pt>
 File: Imagenes/Matriz de correlacion.png.png Graphic file (type png)
 <use Imagenes/Matriz de correlacion.png.png>
-Package pdftex.def Info: Imagenes/Matriz de correlacion.png.png  used on input line 347.
+Package pdftex.def Info: Imagenes/Matriz de correlacion.png.png  used on input line 349.
 (pdftex.def)             Requested size: 206.28247pt x 152.80255pt.
-LaTeX Info: Redefining \. on input line 372.
-LaTeX Info: Redefining \% on input line 372.
+LaTeX Info: Redefining \. on input line 374.
+LaTeX Info: Redefining \% on input line 374.
 [8 <./Imagenes/Matriz de correlacion.png.png>]
 Cap\'{\i }tulo 3.
 [9
 
 ]
-LaTeX Info: Redefining \. on input line 417.
-LaTeX Info: Redefining \% on input line 417.
+LaTeX Info: Redefining \. on input line 419.
+LaTeX Info: Redefining \% on input line 419.
 [10]
 Cap\'{\i }tulo 4.
 
-Overfull \hbox (65.22119pt too wide) in paragraph at lines 449--458
+Overfull \hbox (65.22119pt too wide) in paragraph at lines 451--460
  [][] 
  []
 
@@ -910,34 +910,34 @@ Overfull \hbox (65.22119pt too wide) in paragraph at lines 449--458
 <informe_real_files/figure-latex/unnamed-chunk-5-1.pdf, id=274, 469.755pt x 325.215pt>
 File: informe_real_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use informe_real_files/figure-latex/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: informe_real_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 468.
+Package pdftex.def Info: informe_real_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 470.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
-LaTeX Info: Redefining \. on input line 479.
-LaTeX Info: Redefining \% on input line 479.
+LaTeX Info: Redefining \. on input line 481.
+LaTeX Info: Redefining \% on input line 481.
 [12 <./informe_real_files/figure-latex/unnamed-chunk-5-1.pdf>]
 <informe_real_files/figure-latex/unnamed-chunk-7-1.pdf, id=285, 469.755pt x 325.215pt>
 File: informe_real_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use informe_real_files/figure-latex/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: informe_real_files/figure-latex/unnamed-chunk-7-1.pdf  used on input line 495.
+Package pdftex.def Info: informe_real_files/figure-latex/unnamed-chunk-7-1.pdf  used on input line 497.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
-LaTeX Info: Redefining \. on input line 508.
-LaTeX Info: Redefining \% on input line 508.
+LaTeX Info: Redefining \. on input line 510.
+LaTeX Info: Redefining \% on input line 510.
 [13 <./informe_real_files/figure-latex/unnamed-chunk-7-1.pdf>]
 <informe_real_files/figure-latex/unnamed-chunk-8-1.pdf, id=303, 469.755pt x 325.215pt>
 File: informe_real_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use informe_real_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: informe_real_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 518.
+Package pdftex.def Info: informe_real_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 520.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
-LaTeX Info: Redefining \. on input line 534.
-LaTeX Info: Redefining \% on input line 534.
+LaTeX Info: Redefining \. on input line 536.
+LaTeX Info: Redefining \% on input line 536.
 [14 <./informe_real_files/figure-latex/unnamed-chunk-8-1.pdf>]
 <informe_real_files/figure-latex/unnamed-chunk-9-1.pdf, id=313, 469.755pt x 325.215pt>
 File: informe_real_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use informe_real_files/figure-latex/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: informe_real_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 543.
+Package pdftex.def Info: informe_real_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 545.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
-LaTeX Info: Redefining \. on input line 560.
-LaTeX Info: Redefining \% on input line 560.
+LaTeX Info: Redefining \. on input line 562.
+LaTeX Info: Redefining \% on input line 562.
 [15 <./informe_real_files/figure-latex/unnamed-chunk-9-1.pdf>]
 Cap\'{\i }tulo 5.
 [16
@@ -970,15 +970,15 @@ Package rerunfilecheck Info: File `informe_real.out' has not changed.
 (rerunfilecheck)             Checksum: 9E802ACA8AC1A2C38656E19F5D2F0D9F;7542.
  ) 
 Here is how much of TeX's memory you used:
- 20616 strings out of 469321
- 349475 string characters out of 5464135
+ 20617 strings out of 469321
+ 349491 string characters out of 5464135
  833093 words of memory out of 5000000
- 49051 multiletter control sequences out of 15000+600000
+ 49052 multiletter control sequences out of 15000+600000
  637719 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  105i,12n,107p,564b,794s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/LOQ/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe_real.pdf (24 pages, 887530 bytes).
+Output written on informe_real.pdf (24 pages, 889408 bytes).
 PDF statistics:
  412 PDF objects out of 1000 (max. 8388607)
  344 compressed objects within 4 object streams
