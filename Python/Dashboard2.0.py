@@ -64,7 +64,7 @@ with st.container():
         st.metric(label="Total de Transacciones", value=f"{total_tx}")
     st.write("---")
 
-tab1, tab2 = st.tabs(["Obj 1 y 2: Perfil Demográfico", "Obj 3 y 4: Patrones de Compra"])
+tab1, tab2, tab3 = st.tabs(["Obj 1 y 2: Perfil Demográfico", "Obj 3 y 4: Patrones de Compra", "Análisis Estadístico"])
 
 with tab1:
     col_izq, col_der = st.columns(2)
@@ -82,18 +82,13 @@ with tab1:
         st.plotly_chart(fig_piramide, use_container_width=True)
 
     with col_der:
-        st.subheader("2. Correlación de Variables")
-        cols_numericas = df[["Age", "Quantity", "Price per Unit", "Total Amount"]]
-        if len(cols_numericas) > 1:
-            matriz_corr = cols_numericas.corr()
-            fig_corr = px.imshow(
-                matriz_corr, text_auto=".2f", aspect="auto",
-                color_continuous_scale="Blues",
-                title="¿La edad influye en el monto gastado?"
-            )
-            st.plotly_chart(fig_corr, use_container_width=True)
-        else:
-            st.warning("No hay suficientes datos en este rango para calcular la correlación.")
+        st.subheader("2. Dispersión: Edad y Monto Gastado")
+        fig_dispersion = px.scatter(
+            df, x="Age", y="Total Amount", color="Product Category",
+            title="¿La edad determina el nivel de gasto?",
+            opacity=0.7
+        )
+        st.plotly_chart(fig_dispersion, use_container_width=True)
 
 with tab2:
     col_izq2, col_der2 = st.columns(2)
@@ -117,6 +112,35 @@ with tab2:
             barmode="stack", title="Categorías más compradas según edad"
         )
         st.plotly_chart(fig_pref, use_container_width=True)
+
+with tab3:
+    st.subheader("Evidencia Estadística por Categoría")
+    col_tab, col_box = st.columns([1, 1.2]) 
+    
+    with col_tab:
+        st.write("**Resumen de Métricas Descriptivas**")
+        stats_desc = df.groupby("Product Category")["Total Amount"].agg(
+            Transacciones="count",
+            Promedio="mean",
+            Desv_Est="std",
+            Mínimo="min",
+            Mediana="median",
+            Máximo="max"
+        ).reset_index()
+        
+        st.dataframe(stats_desc.round(2), use_container_width=True, hide_index=True)
+    with col_box:
+        st.write("**Distribución del Gasto (Boxplot)**")
+        fig_box = px.box(
+            df, 
+            x="Product Category", 
+            y="Total Amount", 
+            color="Product Category",
+            points="all", 
+            title="Cuartiles, Mediana y RIC por Producto"
+        )
+        fig_box.update_layout(showlegend=False)
+        st.plotly_chart(fig_box, use_container_width=True)
 
 st.write("---")
 with st.expander("Base de datos limpia"):
