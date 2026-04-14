@@ -98,8 +98,27 @@ Estadistica y Ciencias Actuariales}
   \chapter*{Resumen}     % Crea el título "Resumen" sin numeración (Capítulo *)
   \addcontentsline{toc}{chapter}{Resumen} % (Opcional) Lo añade al índice
   
-  Resumen del trabajo de
-investigación\ldots{}             % Aquí se pega el texto que escribiste en el YAML
+  El presente trabajo de investigación analiza el comportamiento del
+consumidor y los patrones de gasto en una empresa del sector retail
+durante el año 2023. El objetivo principal fue identificar cómo los
+factores demográficos influyen en las decisiones de compra y en la
+estabilidad operativa del negocio. Para ello, se empleó un diseño de
+investigación cuantitativo y descriptivo, aplicando técnicas de Análisis
+Exploratorio de Datos (EDA) sobre un registro transaccional, utilizando
+el lenguaje de programación R para la modelación y visualización
+estadística. Los resultados demostraron empíricamente la ausencia de una
+correlación lineal entre la edad del cliente y el volumen de gasto (r =
+-0.06), indicando que las compras de alto valor ocurren
+transversalmente. Asimismo, se identificó que el núcleo transaccional
+del negocio recae en el segmento de 46 a 55 años, quienes lideran el
+consumo en la categoría de Electrónica, mientras que se evidenció una
+penetración marginal en la Generación Z. Finalmente, el análisis de la
+serie de tiempo reveló una alta volatilidad del flujo comercial, con un
+pico máximo de transacciones en mayo y una caída crítica en septiembre.
+Se concluye que el negocio requiere una reestructuración estratégica,
+abandonando los sesgos de segmentación tradicionales y adoptando
+tácticas de inventario dinámico para mitigar las fluctuaciones
+mensuales.             % Aquí se pega el texto que escribiste en el YAML
   
   \cleardoublepage
 
@@ -110,9 +129,10 @@ investigación\ldots{}             % Aquí se pega el texto que escribiste en el
 \def\baselinestretch{1.5}
 
 % --- CAMBIO CRÍTICO 2: Aquí RMarkdown inyecta todo tu texto ---
-\chapter{Introducción}
-
-Introducción del trabajo de investigación
+\newpage
+\markboth{INTRODUCCIÓN}{INTRODUCCIÓN}
+\addcontentsline{toc}{chapter}{Introducción}
+\vspace*{1cm}
 
 \chapter{Planteamiento del Problema}
 
@@ -141,8 +161,7 @@ una asociación observable entre el perfil demográfico del consumidor y
 sus hábitos de gasto y elección de productos en el conjunto de datos de
 2023?
 
-Argumento final. Debido a esto, se plantea las siguientes preguntas de
-investigación:\\
+Debido a esto, se plantea las siguientes preguntas de investigación:\\
 
 \textbf{1.} ¿Cuál es el perfil demográfico de los clientes que conforman
 el conjunto de datos de 2023 y cómo se distribuyen gráficamente según su
@@ -183,7 +202,7 @@ necesarias para futuras investigaciones más complejas.\\
 \subsection{Objetivos Específicos}
 \begin{itemize}
   \item{Describir la estructura demográfica de los consumidores mediante la elaboración de una pirámide poblacional que clasifique a los clientes por edad y género.}
-  \item{Identificar el grado de asociación lineal entre las variables cuantitativas del estudio (como edad, ingresos y monto de gasto) a través del cálculo de una matriz de correlación.}
+  \item{Identificar el grado de asociación lineal entre las variables cuantitativas del estudio como edad, ingresos y monto de gasto a través del cálculo de una matriz de correlación.}
   \item{Describir la fluctuación de las ventas a lo largo del año 2023 para identificar los picos de demanda y el comportamiento regular en periodos particulares.}
   \item{Determinar las preferencias de compra por categoría de producto según distintos rangos de edad, utilizando tablas de frecuencia cruzada (tablas de contingencia).}
 \end{itemize}
@@ -251,81 +270,361 @@ variables descriptivas y de segmentación se analizan:
 
 \chapter{Marco Teórico}
 
+En el presente capítulo se exponen los fundamentos teóricos y
+metodológicos que sustentan el desarrollo de esta investigación. Dado
+que el objetivo central del proyecto es comprender la asociación entre
+los factores demográficos y los patrones de consumo en el sector
+minorista durante el año 2023, resulta indispensable establecer un marco
+de referencia claro. A continuación, se definen las herramientas de la
+estadística descriptiva y las técnicas de visualización de datos
+empleadas, las cuales permiten transformar los registros transaccionales
+crudos en información estratégica para la toma de decisiones,
+garantizando así la validez y el rigor analítico de los resultados
+obtenidos.
+
 \section{Bases Teóricas}
 
-Resumen de las bases teoricas explicadas en el capitulo y su
-importancia\\
+Para sustentar el análisis del comportamiento de consumo en el sector
+retail durante el año 2023, la presente investigación se fundamenta en
+los siguientes conceptos estadísticos y analíticos:
 
-\subsection{Definición 1}
+\subsection{Definición Retail}
 
-Descripción de la definición 1\\
+El término retail, o comercio minorista, hace referencia al sector
+económico que engloba a las empresas especializadas en la venta masiva
+de productos o servicios a múltiples clientes finales. Kotler y Keller
+(2012) lo definen como ``todas las actividades que intervienen en la
+venta de bienes o servicios directamente a los consumidores finales para
+su uso personal y no comercial''. Este sector se caracteriza por un alto
+volumen de transacciones y la necesidad constante de analizar los
+patrones de compra para optimizar el inventario.
 
-\subsection{Definición 2}
+\subsection{Análisis Exploratorio de Datos (EDA)}
 
-Descripción de la definición 2\\
+El Análisis Exploratorio de Datos es un enfoque metodológico inicial en
+el análisis estadístico que tiene como objetivo resumir las
+características principales de un conjunto de datos, frecuentemente
+utilizando métodos visuales. En el contexto de las ventas minoristas, el
+EDA permite descubrir patrones de consumo, identificar anomalías y
+establecer la relación básica entre el perfil demográfico del cliente y
+su volumen de compra, sin la necesidad de formular modelos predictivos
+complejos desde el inicio.
 
-\subsection{Definición n}
+\subsection{Estadistica Descriptiva}
 
-Descripción de la definición n\\
+Es la rama de la estadística encargada de recolectar, analizar y
+presentar los datos de manera estructurada y comprensible. Para este
+proyecto, se emplean medidas de tendencia central (como el promedio de
+edad) y medidas de frecuencia (como el conteo de transacciones totales)
+para resumir el comportamiento macro de la tienda en 2023.
+
+\subsection{Pirámide Poblacional}
+
+Es una representación gráfica, típicamente estructurada como un
+histograma bidireccional, que muestra la distribución de una población
+según grupos de edad y género. En el ámbito del retail, esta herramienta
+visual permite segmentar el mercado e identificar rápidamente qué
+segmento demográfico representa la mayor fuerza compradora del negocio,
+facilitando la toma de decisiones sobre inventario y marketing.
+
+\begin{center}\includegraphics[width=0.5\linewidth]{Imagenes/piramide.png} \end{center}
+
+\begin{center}
+\small \textit{Figura 1, fuente: elaboración propia a partir de referencias web.}
+\end{center}
+
+\subsection{Matriz de Correlación}
+
+Es una tabla matemática que muestra los coeficientes de correlación
+entre diferentes variables numéricas. Su función principal es medir el
+grado de asociación lineal entre dos métricas (por ejemplo, la edad de
+un cliente y el monto total gastado). Los valores oscilan entre -1 y 1,
+donde valores cercanos a 1 indican una fuerte relación positiva, y los
+cercanos a 0 indican la ausencia de relación. Visualmente, se suele
+representar mediante un mapa de calor (Heatmap) para facilitar su
+interpretación.
+
+\begin{center}\includegraphics[width=0.5\linewidth]{Imagenes/Matriz de correlacion.png} \end{center}
+
+\begin{center}
+\small \textit{Figura 2, fuente: elaboración propia a partir de referencias web.}
+\end{center}
+
+\subsection{Análisis de Series de Tiempo Simples}
+
+Se refiere al estudio de las variaciones o fluctuaciones periódicas en
+los datos a lo largo de un ciclo temporal específico (en este caso, los
+doce meses del año). Utilizando gráficos de líneas, se busca identificar
+picos de demanda y valles de ventas, lo cual es fundamental en el
+comercio minorista para planificar la reposición de mercancía en
+temporadas altas.
+
+\subsection{Tablas de Contingencia y Gráficos de Barras Apiladas}
+
+Una tabla de contingencia es una herramienta que tabula la frecuencia de
+observaciones de múltiples variables categóricas. Gráficamente, esto se
+traduce en gráficos de barras apiladas, los cuales permiten observar la
+proporción que ocupa cada subcategoría (por ejemplo, el tipo de
+producto) dentro de un grupo mayor (los rangos de edad). Esta técnica es
+ideal para responder interrogantes sobre preferencias de productos
+específicas por segmento etario.
 
 \chapter{Marco Metódico}
 
-En esta sección se presentan las metodologías y/o test necesarios
-relacionados con la práctica divulgada en el marco teórico, así como las
-fuentes de datos.
+En este capítulo se describen los procedimientos, técnicas y
+herramientas tecnológicas empleadas para llevar a cabo el Análisis
+Exploratorio de Datos (EDA) sobre los registros de ventas del sector
+minorista correspondientes al año 2023. Se detalla el tratamiento
+aplicado a la base de datos y la justificación de los recursos
+computacionales utilizados.
 
 \section{Bases metódicas utilizadas en el trabajo de investigación}
 
-Desarrollo\\
+\subsection{Origen y Tratamiento de los Datos}
 
-\subsection{Item 1}
+La presente investigación se enmarca en un diseño no experimental de
+corte transversal (analizando un periodo específico del año 2023). Es de
+tipo descriptiva y cuantitativa, ya que busca especificar las
+propiedades y características demográficas de los consumidores mediante
+el análisis estadístico de sus compras. El conjunto de datos
+transaccionales fue extraído de un repositorio público validado en la
+plataforma de ciencia de datos Kaggle. Dicho conjunto fue sometido a
+procesos de limpieza (Data Wrangling) para asegurar la consistencia de
+las variables de edad, género, categorías y montos de compra. Destacando
+las siguientes operaciones metodológicas:
 
-Descripción\\
+\begin{itemize}
+\item{Transformación temporal: Se convirtió la variable de la fecha de compra a un formato estandarizado de series de tiempo (Datetime) para poder aislar y agrupar los datos según su ocurrencia mensual para el análisis de la serie temporal dentro del periodo establecido (1 año).}
 
-\subsection{Item 2}
+\item{Discretización de variables (Binning): Para la creación de la pirámide poblacional, se transformó la variable continua "Edad" en una variable categórica ("Rango Edad"). Se agruparon a los clientes en cinco intervalos específicos (<25, 26-35, 36-45, 46-55, 56+), lo que permitió cruzar esta información demográfica con las preferencias de categorías de productos.}
+\end{itemize}
 
-Descripción\\
+\subsection{Herramientas y Lenguajes de Programación}
 
-\subsubsection{Item 2.2}
+Para la ejecución de este marco metodológico, se seleccionó el lenguaje
+de programación Python, reconocido por su robustez en la ciencia de
+datos. El procesamiento se llevó a cabo mediante la integración de las
+siguientes librerías especializadas:
 
-Descripción\\
+\begin{itemize}
+\item{Pandas: Utilizada como la estructura principal para la manipulación de datos. Mediante esta librería se ejecutaron las funciones de agrupación poblacional y el cálculo matemático de la matriz de correlación de Pearson/Spearman para evaluar la relación entre la edad y el monto de compra.}
 
-\subsection{Item n}
+\item{Plotly Express: Herramienta seleccionada para la visualización gráfica de los datos. Su implementación metodológica permitió construir representaciones bidireccionales (para el contraste de géneros) y mapas de calor (Heatmaps), superando las limitaciones de los gráficos estáticos tradicionales.}
 
-Descripción\\
+\item{Streamlit: Framework empleado para estructurar lógicamente los resultados en un panel de control interactivo (Dashboard), facilitando la segmentación visual de los objetivos demográficos y de consumo a través de pestañas dinámicas. Adicionalmente, se implementaron componentes de interfaz de usuario (Widgets), específicamente un control deslizante (Slider), que permite filtrar la base de datos en tiempo real según rangos de edad personalizados, garantizando una exploración analítica profunda y focalizada.}
+\end{itemize}
 
 \chapter{Análisis de Resultados}
 
-\{\small Este capítulo presenta los resultados obtenidos al aplicar las
-metodologías descritas en el capítulo anterior, así como del análisis
-estadístico descriptivo de las variables estudiadas y las ventajas y
-desventajas al aplicar dichos tests.\}
+Este capítulo presenta los resultados obtenidos al aplicar las
+metodologías descritas en el capítulo anterior, enfocándose en el
+análisis estadístico descriptivo de las variables transaccionales y
+demográficas del año 2023 a través del panel interactivo.
 
-\section{Presentación de resultados 1}
+\section{Ventajas y Desventajas de los Tests Aplicados}
 
-Descripción\\
+Antes de detallar los hallazgos visuales, es metodológicamente
+pertinente evaluar el alcance de las herramientas estadísticas empleadas
+en este Análisis Exploratorio de Datos (EDA):
 
-\section{Presentación de resultados 2}
+\subsection{Matriz de Correlación:}
+\begin{itemize}
+\item{Ventajas: Permite identificar visual y numéricamente la fuerza y dirección de la relación lineal entre múltiples variables numéricas (por ejemplo, contrastar si la Edad afecta el Total Gastado).}
 
-Descripción\\
+\item{Desventajas: Mide únicamente asociación matemática, no causalidad. Adicionalmente, el test clásico de Pearson puede ser sensible a valores atípicos (outliers) que distorsionen el coeficiente.}
+\end{itemize}
+\subsection{Discretización Demográfica:}
+\begin{itemize}
+\item{Ventajas: Transformar la variable continua Edad en rangos categóricos facilita enormemente la interpretación visual y la detección de patrones macro en el comportamiento de consumo por generaciones.}
 
-\section{Presentación de resultados n}
+\item{Desventajas: Al agrupar los datos se pierde la varianza interna y la granularidad de la variable original, asumiendo que un cliente de 26 años se comporta exactamente igual que uno de 35 por pertenecer al mismo segmento.}
+\end{itemize}
 
-Descripción\\
+\section{Estadistica descriptiva por categoria}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-4}Estadísticas descriptivas de consumo por categoría}
+\centering
+\begin{tabular}[t]{lrrrrr}
+\toprule
+Categoria & Transacciones & Edad\_Promedio & Gasto\_Promedio & Desv\_Estandar & Ingreso\_Total\\
+\midrule
+Beauty & 307 & 40.4 & 467.48 & 563.61 & 143515\\
+Clothing & 351 & 41.9 & 443.25 & 550.70 & 155580\\
+Electronics & 342 & 41.7 & 458.79 & 567.54 & 156905\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Para comprender la composición demográfica de la base de clientes y
+determinar qué segmento representa la mayor fuerza compradora del
+negocio, se generó una pirámide poblacional a partir de los datos
+transaccionales. Como se observa en la siguiente figura, esta
+distribución visual permite contrastar claramente la participación de
+hombres y mujeres segmentados por sus respectivos rangos etarios durante
+el año 2023.
+
+\begin{center}\includegraphics[width=0.9\linewidth]{informe_real_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+Al analizar la distribución de las transacciones, se hace evidente una
+reconfiguración del público objetivo. La mayor concentración de compras
+se agrupa sólidamente en el segmento de adultos de 46 a 55 años, con una
+participación equitativa entre hombres y mujeres (superando las 140
+transacciones conjuntas). Por el contrario, se observa una marcada
+debilidad en la captación del segmento más joven (menores de 25 años),
+cuya participación es estadísticamente marginal. Esto sugiere que la
+oferta de valor de la tienda tiene alta resonancia en perfiles de
+mediana edad con poder adquisitivo consolidado.
+
+\section{Correlación de Variables Numéricas}
+
+Relación entre Edad y Monto Gastado. Para evaluar estadísticamente las
+dinámicas de compra y comprobar de manera empírica si el perfil
+demográfico determina el volumen de gasto, se procedió a generar un
+gráfico de dispersión bidimensional. Este método visual permite
+identificar si existe algún patrón de comportamiento, tendencia lineal o
+concentración de alto valor adquisitivo asociado a etapas de vida
+específicas, superando las limitaciones de la estadística descriptiva
+básica.
+
+\begin{verbatim}
+## [1] -0.06056802
+\end{verbatim}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{informe_real_files/figure-latex/unnamed-chunk-7-1} \end{center}
+
+El gráfico de dispersión confirma de manera empírica y visual la
+ausencia de una correlación lineal significativa entre las variables. La
+formación de bandas horizontales a lo largo del eje Y responde a la
+naturaleza discreta de los precios y cantidades en el sector retail; sin
+embargo, lo destacable es que estas agrupaciones de gasto se mantienen
+constantes a lo largo de todo el eje X (Edad). Las compras de alto valor
+(superiores a los \$1,500) son ejecutadas indistintamente por clientes
+de 20 años como de 60 años. Esto demuestra que la edad no es un factor
+predictivo del nivel de gasto y valida la recomendación de aplicar
+estrategias de upselling de forma transversal a toda la clientela.
+
+\section{Evolución Temporal de los Ingresos (Serie de Tiempo Simple)}
+
+El seguimiento temporal de las ventas es un componente vital del
+análisis exploratorio, ya que permite observar el comportamiento y la
+evolución del flujo de caja a lo largo de los doce meses del año 2023.
+El análisis de esta serie de tiempo simple resulta estratégico para
+identificar de manera empírica en qué momentos del año ocurren los picos
+de demanda y las caídas críticas, información fundamental para la futura
+optimización de inventarios.
+
+\begin{center}\includegraphics[width=0.9\linewidth]{informe_real_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+El análisis de la serie de tiempo simple, basado en el volumen de
+transacciones, revela una alta volatilidad en el flujo comercial durante
+el año 2023. En lugar de exhibir una tendencia estable, el
+comportamiento de compra fluctúa significativamente mes a mes. El pico
+máximo de actividad operativa se registró en mayo, superando la barrera
+de las 100 transacciones mensuales, seguido de repuntes importantes en
+el último trimestre (octubre y diciembre). Por el contrario, el mes de
+septiembre representó una contracción crítica en la afluencia,
+registrando el nivel más bajo del periodo (aproximadamente 65
+transacciones). Este patrón irregular demuestra que el negocio opera
+bajo ciclos de demanda muy marcados, lo que exige estrategias ágiles:
+garantizar el máximo abastecimiento en mayo e implementar campañas
+agresivas para impulsar el tráfico de clientes durante la caída de
+septiembre.
+
+\section{Preferencias de Categorías por Edad}
+
+Finalmente, para trazar estrategias de marketing y abastecimiento mucho
+más precisas, es necesario cruzar la estructura demográfica con el
+comportamiento de compra específico. El siguiente gráfico ilustra cómo
+se distribuye la demanda de las distintas categorías de productos (como
+Ropa, Electrónica y Belleza) dentro de cada segmento de edad.
+
+\begin{center}\includegraphics[width=0.9\linewidth]{informe_real_files/figure-latex/unnamed-chunk-9-1} \end{center}
+
+El cruce de variables demográficas y comerciales mediante barras
+apiladas revela gráficamente dónde se concentra el núcleo del negocio.
+Se confirma que el segmento de 46 a 55 años registra el mayor volumen
+total de transacciones, impulsado de manera significativa por una alta
+demanda en la categoría de Electrónica (bloque superior). Por otro lado,
+la categoría de Ropa mantiene una tracción sólida y constante,
+predominando fuertemente en los consumidores adultos a partir de los 36
+años. Finalmente, los artículos de Belleza presentan un consumo base
+estable y transversal en todas las edades, sin llegar a dominar de forma
+absoluta ningún segmento. Estos resultados sugieren estratégicamente que
+las campañas publicitarias para productos tecnológicos deben abandonar
+el sesgo juvenil y focalizarse directamente en el público de mediana
+edad, quienes concentran el verdadero poder adquisitivo en esta
+categoría.
 
 \chapter{Conclusiones y Recomendaciones}
 
-\textbf{1.-} Conclusion 1 del trabajo de investigación.\\
+A partir del análisis exploratorio y la aplicación de métodos
+estadísticos sobre la base de datos transaccional del año 2023, se da
+respuesta formal a los objetivos planteados al inicio de esta
+investigación:
 
-\textbf{Recomendación} Recomendación 1 del trabajo de investigación.\\
+\textbf{1.-} Sobre la Estructura Demográfica del Consumidor
 
-\textbf{2.-} Conclusion 2 del trabajo de investigación.\\
+\textbf{Conclusión} Se comprobó que el núcleo transaccional del negocio
+no reside en el público juvenil. La mayor concentración de compras es
+ejecutada por el segmento de adultos entre 46 y 55 años.
+Simultáneamente, se evidenció una profunda debilidad en la captación de
+los jovenes menores de 25 años, cuya participación comercial es
+estadísticamente marginal.
 
-\textbf{Recomendación} Recomendación 2 del trabajo de investigación.\\
+\textbf{Recomendación} Diseñar estrategias de inbound marketing y
+programas de fidelización orientados específicamente a captar al
+segmento menor de 25 años, un nicho de mercado actualmente
+desaprovechado. Al mismo tiempo, se deben mantener los estándares de
+servicio para proteger la retención del segmento de 46 a 55 años, que
+representa el soporte actual del negocio.
 
-\textbf{n.-} Conclusion n del trabajo de investigación.\\
+\textbf{2.-} Sobre el Impacto de la Edad en el Nivel de Gasto
 
-\textbf{Recomendación} Recomendación n del trabajo de investigación.\\
+\textbf{Conclusión} Mediante el análisis visual de dispersión y el
+cálculo de correlación, se demostró empíricamente la ausencia de
+relación lineal (r = -0.06) entre la edad del cliente y el monto
+gastado. Las compras de alto valor ocurren de manera transversal y
+uniforme sin importar la etapa de vida del consumidor.
+
+\textbf{Recomendación} Evitar la segmentación de precios basada en la
+edad. Se sugiere implementar estrategias de venta cruzada
+(cross-selling) y ventas de mayor valor (upselling) aplicables a toda la
+base de clientes por igual, ya que un consumidor de 20 años tiene la
+misma probabilidad estadística de realizar una compra costosa que uno de
+60 años.
+
+\textbf{3.-} Sobre la Evolución Temporal de las Transacciones
+
+\textbf{Conclusión} El análisis de la serie de tiempo simple de 2023
+descartó un comportamiento de ingresos estable, revelando en su lugar
+una alta volatilidad operativa. Se identificó un pico máximo de
+transacciones durante el mes de mayo, contrastando drásticamente con una
+caída crítica del volumen de ventas durante el mes de septiembre.
+
+\textbf{Recomendación} Implementar una estrategia de inventario ágil y
+compras anticipadas para garantizar el máximo abastecimiento en el
+segundo trimestre (abril-mayo). Paralelamente, es imperativo estructurar
+campañas de descuentos agresivos y promociones especiales para el mes de
+septiembre, con el fin de mitigar la histórica contracción de la
+demanda.
+
+\textbf{4.-} Sobre las Preferencias por Categoría de Producto
+
+\textbf{Conclusión} El cruce de categorías con rangos etarios
+desmitificó supuestos comerciales clásicos. La categoría de Electrónica
+es el principal motor de ingresos y es consumida abrumadoramente por el
+segmento mayor (46-55 años). La categoría de Ropa domina a partir de los
+36 años, mientras que los artículos de Belleza mantienen un consumo base
+que no distingue edades.
+
+\textbf{Recomendación} Redirigir el presupuesto de las campañas
+publicitarias de artículos tecnológicos. En lugar de enfocar la
+publicidad de electrónica exclusivamente en el público joven, la pauta
+debe focalizarse en los consumidores de mediana edad, utilizando canales
+y mensajes acordes a su perfil, ya que son ellos quienes demuestran el
+verdadero poder adquisitivo en este rubro.
 
 \appendix
 \renewcommand{\thechapter}{\Alph{chapter}}
