@@ -6,7 +6,7 @@ st.set_page_config(page_title="Análisis Retail 2023", layout="wide")
 
 @st.cache_data
 def cargar_datos():
-    datos = pd.read_csv("Dataset.limpio/retail_limpio.csv")
+    datos = pd.read_csv("Python/retail_limpio.csv")
     datos["Date"] = pd.to_datetime(datos["Date"])
     datos["Mes"] = datos["Date"].dt.month_name()
     
@@ -26,12 +26,27 @@ st.sidebar.write("- Eddie Palomino")
 st.sidebar.write("- Juan Covarrubia")
 
 st.sidebar.write("---")
-st.sidebar.subheader("Filtros por Edad")
+st.sidebar.subheader("Filtros por Edades y Categorias")
+categorias_disponibles = df_completo["Product Category"].unique().tolist()
+categoria_sel = st.sidebar.multiselect(
+    "Filtrar por Categoría:", 
+    options=categorias_disponibles,
+    default=categorias_disponibles
+)
 edad_min = int(df_completo["Age"].min())
 edad_max = int(df_completo["Age"].max())
-rango_sel = st.sidebar.slider("Seleccionar Rango de Edad:", min_value=edad_min, max_value=edad_max, value=(edad_min, edad_max))
+rango_edad = st.sidebar.slider(
+    "Rango de Edad:", 
+    min_value=edad_min, 
+    max_value=edad_max, 
+    value=(edad_min, edad_max)
+)
 
-df = df_completo[(df_completo["Age"] >= rango_sel[0]) & (df_completo["Age"] <= rango_sel[1])]
+df = df_completo[
+    (df_completo["Product Category"].isin(categoria_sel)) & 
+    (df_completo["Age"] >= rango_edad[0]) & 
+    (df_completo["Age"] <= rango_edad[1])
+]
 
 st.title("Análisis de Consumo Retail 2023")
 
