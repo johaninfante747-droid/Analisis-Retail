@@ -29,3 +29,7 @@ Analizar el perfil demográfico y el comportamiento de compra de los clientes re
 3. Describir la fluctuación de las ventas a lo largo del año 2023 para identificar los picos de demanda y el comportamiento regular en periodos particulares.
 
 4. Determinar las preferencias de compra por categoría de producto según distintos rangos de edad, utilizando tablas de frecuencia cruzada (tablas de contingencia).
+
+### Dasboard
+
+https://analisis-retail.onrender.com
